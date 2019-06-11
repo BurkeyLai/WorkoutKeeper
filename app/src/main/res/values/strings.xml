@@ -1,0 +1,113 @@
+<resources>
+    <string name="app_name">WorkoutKeeper</string>
+    <string name="title_rmCounter">RM Counter</string>
+    <string name="title_anatomical">Anatomical</string>
+    <string name="title_activity_training">Training Recipe</string>
+    <string name="training_text">TrainingView</string>
+
+    <string-array name="chest_recipe_titles">
+        <item>Barbell Chest Press</item>
+        <item>Dumbbell Chest Press</item>
+        <item>Chest Fly</item>
+        <item>Incline Barbell Chest Press</item>
+        <item>Incline Dumbell Chest Press</item>
+        <item>Incline Chest Fly</item>
+        <item>Decline Barbell Chest Press</item>
+        <item>Decline Dumbell Chest Press</item>
+        <item>Decline Chest Fly</item>
+        <item>Push Up</item>
+    </string-array>
+
+    <string-array name="chest_recipe_info">
+        <item>Use barbell to train your chest.</item>
+        <item>Use dumbbell to train your chest.</item>
+        <item>Use cable or machine to train your chest.</item>
+        <item>Use barbell to train your upper chest.</item>
+        <item>Use dumbbell to train your upper chest.</item>
+        <item>Use cable or machine to train your upper chest.</item>
+        <item>Use barbell to train your lower chest.</item>
+        <item>Use dumbbell to train your lower chest.</item>
+        <item>Use cable or machine to train your lower chest.</item>
+        <item>Leaning over and push up to train your chest</item>
+    </string-array>
+
+    <string-array name="shoulder_recipe_titles">
+        <item>Shoulder Press</item>
+        <item>Front Raise</item>
+        <item>Lateral Raise</item>
+        <item>Cable Side Delt Fly</item>
+        <item>Dumbbell Reverse Fly</item>
+        <item>Machine Reverse Fly</item>
+        <item>Handstand Push Up</item>
+    </string-array>
+
+    <string-array name="shoulder_recipe_info">
+        <item>Seated(Standing) and push barbell or dumbbell to train your front deltoid.</item>
+        <item>Seated(Standing) and raise dumbbell to train your front deltoid.</item>
+        <item>Seated(Standing) and raise dumbbell to train your side deltoid.</item>
+        <item>Use cable to train your side deltoid.</item>
+        <item>Leaning forward and use dumbbell to train your rear deltoid.</item>
+        <item>Use cable or machine to train your rear deltoid.</item>
+        <item>Leaning over and push up to train your shoulder</item>
+    </string-array>
+
+
+    <string-array name="sets_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="reps_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+    </string-array>
+
+    <string-array name="weights_array">
+        <item>KG</item>
+        <item>LB</item>
+    </string-array>
+
+    <string-array name="rest_array">
+        <item>10 s</item>
+        <item>20 s</item>
+        <item>30 s</item>
+        <item>40 s</item>
+        <item>50 s</item>
+        <item>60 s</item>
+        <item>70 s</item>
+        <item>80 s</item>
+        <item>90 s</item>
+        <item>100 s</item>
+        <item>110 s</item>
+        <item>120 s</item>
+        <item>3 min</item>
+        <item>4 min</item>
+        <item>5 min</item>
+    </string-array>
+</resources>

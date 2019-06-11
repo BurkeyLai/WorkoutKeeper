@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.workoutkeeper.MainActivity">
+    <item
+        android:id="@+id/rmCounter_settings"
+        android:orderInCategory="100"
+        android:title="@string/title_rmCounter"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/anatomical_settings"
+        android:orderInCategory="80"
+        android:title="@string/title_anatomical"
+        app:showAsAction="never" />
+</menu>
