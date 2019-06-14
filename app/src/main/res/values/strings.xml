@@ -51,6 +51,96 @@
         <item>Leaning over and push up to train your shoulder</item>
     </string-array>
 
+    <string-array name="back_recipe_titles">
+        <item>Narrow Pull Up</item>
+        <item>Wide Pull Up</item>
+        <item>Lat Pull Down</item>
+        <item>Seated Row</item>
+        <item>Bent Row</item>
+        <item>T Raises</item>
+        <item>Single-Arm Dumbbell Row</item>
+        <item>Deadlift</item>
+        <item>Back Extension</item>
+    </string-array>
+
+    <string-array name="back_recipe_info">
+        <item>Pull up with holding narrowly.</item>
+        <item>Pull up with holding widely.</item>
+        <item>Use a machine with lat-bar and pull down.</item>
+        <item>Seat and pulling row machine bar toward your body.</item>
+        <item>Leaning forward with holding a barbell and pull it toward your abdomen.</item>
+        <item>Leaning forward and keeping arms straight, lift weights up to shoulder height then lower back down.</item>
+        <item>Holding a dumbbell in one hand, bend knees on a bench, and shift hips back. Draw the weight up toward chest.</item>
+        <item>Leaning forward with holding a barbell with back straight and pull it until your body straight.</item>
+        <item>Bent your waist with keeping your upper back straight, then holding a barbell and move your waist straight.</item>
+    </string-array>
+
+    <string-array name="abs_recipe_titles">
+        <item>Hardstyle Plank</item>
+        <item>Dead Bug</item>
+        <item>Hollow Extension-To-Cannonball</item>
+        <item>Dumbbell Side Bend</item>
+        <item>Crossover Curl</item>
+        <item>Decline Curl</item>
+    </string-array>
+
+    <string-array name="abs_recipe_info">
+        <item>Lying face down on the ground, prop yourself up into a forearm plank position.</item>
+        <item>Lay on the floor with arms straight above your shoulders. To start, bring your knees directly over your hips and touch your foot with diag-hand.</item>
+        <item>Lay on the floor and curl your body like a ball with hands embrace your knees.</item>
+        <item>Holding a dumbbell with one hand and curl your body toward the empty-hand side.</item>
+        <item>Holding a plate and curl your abdomen, then twist your abs toward left and right repeatedly. </item>
+        <item>Lay on a decline bench and curl your abs upward to make your elbows touching your knees.</item>
+    </string-array>
+
+    <string-array name="leg_recipe_titles">
+        <item>Bodyweight Squats</item>
+        <item>Reverse Lunges With Knee Lifts</item>
+        <item>Plié Squat Calf Raises</item>
+        <item>Squat Jumps</item>
+        <item>High Knee Toe Taps</item>
+        <item>Side Lunges</item>
+        <item>Single-Leg Calf Raises</item>
+        <item>Curtsy Lunges</item>
+        <item>Pistol Squats</item>
+        <item>Side Leg Raises</item>
+        <item>Inner Thigh Leg Raises</item>
+        <item>Single-Leg Glute Brides</item>
+        <item>Inverted Inner Thigh Openers</item>
+    </string-array>
+
+    <string-array name="leg_recipe_info">
+        <item>Stand with your feet about shoulder-width apart and slightly turned out with your weight in your heels. Hinge forward at your hips and sit your butt back into a squat. Bend your knees until your thighs are parallel to the ground. Drive through your heels to stand back up straight. Squeeze your butt and keep your core tight as you stand.</item>
+        <item>Start standing with your feet about shoulder-width apart. Step backwards with your left foot, landing on the ball of your foot and bending both knees to create two 90-degree angles. Push through your right heel to return to standing. As you stand up, thrust your left knee toward your chest. Repeat on the other side.</item>
+        <item>Stand with feet wider than shoulder-width apart, toes turned out, and hands on hips or in front of your chest. Squat until your thighs are parallel to floor. While staying in a squat, lift both heels off the ground and hold for two seconds. Lower heels back down.</item>
+        <item>Stand with your feet slightly wider than hip-width apart. Hinge forward at your hips and sit your butt back into a squat. Bend your knees until your thighs are parallel to the ground. Jump up into the air as high as you can and straighten out your legs. Swing your arms down by your sides for momentum, and keep your back straight and chest lifted. Land back on the floor with soft knees. Go directly into another squat.</item>
+        <item>Stand facing a bench or box, hands on hips or by your sides. Tap your left foot on the bench, then swap legs and tap your right foot, quickly alternating sides. Keep your back straight and chest lifted the entire time.</item>
+        <item>Stand with your feet hip-width apart. Take a big step out to your right. Bend your right knee and push your butt back, keeping your left leg straight. Keep your chest lifted and core tight. Repeat on the other side.</item>
+        <item>Stand with your feet hip-width apart. Raise your left knee to hip level, toes pointed, hands on hips or behind your head (whatever keeps you stable). Keep your core tight as you lift your right heel as high as you can off the floor, balancing on the ball of your foot. Hold for three seconds, then lower the heel back down. Repeat on the other side.</item>
+        <item>Stand tall with your feet hip-width apart. Step your right leg diagonally behind your left leg and bend your knees to lower into a lunge. Push through your right heel to stand, and bring your right leg back to start. Repeat on the other side.</item>
+        <item>Stand with your feet together. Lift your left leg a few inches and extend it forward, foot flexed. Bend your right knee, hinge forward at the hips, and sit back into a squat, while lifting your left leg to hip height.Extend your arms out for balance. Try to bend your knee to 90 degrees if you can. Push through your right heel to straighten your leg and return to start. Repeat on the other leg.</item>
+        <item>Lie on one side with legs out straight and stacked on top of each other. Prop your torso up with your forearm or rest your torso flat on the mat. Lift your top leg toward the ceiling in a slow and controlled movement. Make sure to lift from the hip and butt, not your lower back. Return to start. Repeat on the other side.</item>
+        <item>Lie on one side with legs out straight and stacked on top of each other and your torso flat on the mat or propped up on your forearm. Cross your top leg over the bottom leg, bending at the knee, so that your top foot is in front of your bottom knee. Lift your bottom leg toward the ceiling in a slow and controlled movement. Keep your torso stable throughout. Return to start. Repeat on the other side.</item>
+        <item>Lie on your back with your knees bent and feet flat on the floor. Lift your right leg and straighten out your knee. Keep your thighs parallel to each other. Point your toe toward the ceiling. Push through your heels to lift your hips up while squeezing your glutes. Try to create one diagonal line from your shoulders to your knees. Pause for one to two seconds, then lower back down. Repeat with the opposite leg.</item>
+        <item>Lie on your back with your knees bent and feet flat on the floor. Lift your right leg up, keeping your thighs touching, and extend your leg up toward the ceiling. Slowly lower your right leg out to the right side as far as you can while keeping your hips and lower back glued to the floor. Bring your leg back to start. Repeat on the other leg.</item>
+    </string-array>
+
+    <string-array name="arm_recipe_titles">
+        <item>Biceps Curl</item>
+        <item>Hammer Curl</item>
+        <item>Bent over dumbbell row</item>
+        <item>Tricep kickbacks</item>
+        <item>Tricep pulses</item>
+    </string-array>
+
+    <string-array name="arm_recipe_info">
+        <item>This is a very classic move to tone the biceps. Here it’s impotant to keep your elbows in and still to really work the bicep.</item>
+        <item>This move is very similar to the biceps curl, but done under different angle. Again keep your elbows still and close to your body to make the most out of this move.</item>
+        <item>This move will strengthen your upper body and can help improve your posture. Make sure to really squeeze the shoulder blades together.</item>
+        <item>The area you really want to tone up for when you are waving.</item>
+        <item>Same starting position like the triceps kickbacks, but you’re keeping your arms straight behind you and pulse them up and down, without bending at the elbows.</item>
+    </string-array>
+
 
     <string-array name="sets_array">
         <item>1</item>
@@ -110,4 +200,8 @@
         <item>4 min</item>
         <item>5 min</item>
     </string-array>
+    <string name="title_activity_daily_schedule">DailyScheduleActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

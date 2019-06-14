@@ -13,6 +13,10 @@
         android:id="@+id/action_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:shadowColor="#000"
+        android:shadowDx="0"
+        android:shadowDy="10"
+        android:shadowRadius="10"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold|italic" />
@@ -36,6 +40,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:shadowColor="#000"
+            android:shadowDx="0"
+            android:shadowDy="10"
+            android:shadowRadius="10"
             android:text="Sets:"
             android:textAlignment="center"
             android:textSize="20sp"
@@ -52,6 +60,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:shadowColor="#000"
+            android:shadowDx="0"
+            android:shadowDy="10"
+            android:shadowRadius="10"
             android:text="Reps:"
             android:textAlignment="center"
             android:textSize="20sp"
@@ -93,11 +105,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Take a breath"
+                android:background="#778899"
                 android:onClick="beginToCountdown"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal">
 
                 <Button
@@ -105,7 +119,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginEnd="4dp"
                     android:text="Pause"
+                    android:background="#778899"
                     android:onClick="pauseCountdown"/>
 
                 <Button
@@ -113,7 +130,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginStart="4dp"
                     android:text="Reset"
+                    android:background="#778899"
                     android:onClick="resetCountdown"/>
             </LinearLayout>
         </LinearLayout>
@@ -131,7 +151,8 @@
             style="@android:style/Widget.ProgressBar.Horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:progressTint="@color/colorProgressBar"/>
 
         <TextView
             android:id="@+id/percent_text"

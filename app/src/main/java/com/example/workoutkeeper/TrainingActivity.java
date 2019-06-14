@@ -25,8 +25,8 @@ public class TrainingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_training);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -42,9 +42,16 @@ public class TrainingActivity extends AppCompatActivity {
 
         if (body_part.equals("chest")) {
             initializeChestData();
-        }
-        else if (body_part.equals("shoulder")) {
+        } else if (body_part.equals("shoulder")) {
             initializeShoulderData();
+        } else if (body_part.equals("back")) {
+            initializeBackData();
+        } else if (body_part.equals("abs")) {
+            initializeABSData();
+        } else if (body_part.equals("leg")) {
+            initializeLegData();
+        } else if (body_part.equals("arm")) {
+            initializeArmData();
         }
 
     }
@@ -66,7 +73,7 @@ public class TrainingActivity extends AppCompatActivity {
         }
 
         mRecyclerView = findViewById(R.id.recyclerview);
-        mAdapter = new TrainingListAdapter(this, mRecipe, mRecipeDescription);
+        mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -81,7 +88,67 @@ public class TrainingActivity extends AppCompatActivity {
         }
 
         mRecyclerView = findViewById(R.id.recyclerview);
-        mAdapter = new TrainingListAdapter(this, mRecipe, mRecipeDescription);
+        mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription);
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    private void initializeBackData(){
+        String[] recipeList = getResources().getStringArray(R.array.back_recipe_titles);
+        String[] recipeInfo = getResources().getStringArray(R.array.back_recipe_info);
+
+        for (int i = 0; i < recipeList.length; i++) {
+            mRecipe.addLast(recipeList[i]);
+            mRecipeDescription.addLast(recipeInfo[i]);
+        }
+
+        mRecyclerView = findViewById(R.id.recyclerview);
+        mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription);
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    private void initializeABSData(){
+        String[] recipeList = getResources().getStringArray(R.array.abs_recipe_titles);
+        String[] recipeInfo = getResources().getStringArray(R.array.abs_recipe_info);
+
+        for (int i = 0; i < recipeList.length; i++) {
+            mRecipe.addLast(recipeList[i]);
+            mRecipeDescription.addLast(recipeInfo[i]);
+        }
+
+        mRecyclerView = findViewById(R.id.recyclerview);
+        mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription);
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    private void initializeLegData(){
+        String[] recipeList = getResources().getStringArray(R.array.leg_recipe_titles);
+        String[] recipeInfo = getResources().getStringArray(R.array.leg_recipe_info);
+
+        for (int i = 0; i < recipeList.length; i++) {
+            mRecipe.addLast(recipeList[i]);
+            mRecipeDescription.addLast(recipeInfo[i]);
+        }
+
+        mRecyclerView = findViewById(R.id.recyclerview);
+        mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription);
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    private void initializeArmData(){
+        String[] recipeList = getResources().getStringArray(R.array.arm_recipe_titles);
+        String[] recipeInfo = getResources().getStringArray(R.array.arm_recipe_info);
+
+        for (int i = 0; i < recipeList.length; i++) {
+            mRecipe.addLast(recipeList[i]);
+            mRecipeDescription.addLast(recipeInfo[i]);
+        }
+
+        mRecyclerView = findViewById(R.id.recyclerview);
+        mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

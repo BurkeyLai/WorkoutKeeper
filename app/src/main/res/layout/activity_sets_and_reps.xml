@@ -48,7 +48,7 @@
 
                     <EditText
                         android:id="@+id/weights_edit"
-                        android:layout_width="30dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:inputType="number"
@@ -58,6 +58,7 @@
                         android:id="@+id/weights_spinner"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:layout_gravity="center">
                     </Spinner>
                 </LinearLayout>
@@ -136,13 +137,14 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/next_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
-                android:text="GO"
-                android:onClick="goToProgress"/>
+                android:text="GO !"
+                android:onClick="goToNext"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

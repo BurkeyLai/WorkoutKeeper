@@ -1,5 +1,6 @@
 package com.example.workoutkeeper;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -18,19 +19,22 @@ public class TrainingListAdapter extends
     private final LinkedList<String> mWordList;
     private final LinkedList<String> mDescriptionList;
     private LayoutInflater mInflater;
-    public static final String EXTRA_MESSAGE = "com.example.droidcafe.extra.MESSAGE";
+    private int schedule;
+    //public static final String EXTRA_MESSAGE = "com.example.workoutkeeper.extra.MESSAGE";
+    //public static final String Schedule_ID = "com.example.workoutkeeper.schedule.ID";
 
     public TrainingListAdapter(Context context,
+                           int n,
                            LinkedList<String> wordList,
                            LinkedList<String> descriptionList ) {
 
         mInflater = LayoutInflater.from(context);
+        schedule = n;
         this.mWordList = wordList;
         this.mDescriptionList = descriptionList;
     }
 
-    class TrainingViewHolder extends RecyclerView.ViewHolder
-            implements View.OnClickListener {
+    class TrainingViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public final TextView wordItemView;
         public final TextView descriptionItemView;
@@ -46,11 +50,21 @@ public class TrainingListAdapter extends
 
         @Override
         public void onClick(View view) {
+
             int mPosition = getLayoutPosition();
+            int ID = schedule;
             String ITEM = mWordList.get(mPosition);
+
             Intent intent = new Intent(view.getContext(), SetsAndRepsActivity.class);
-            intent.putExtra(EXTRA_MESSAGE, ITEM);
-            view.getContext().startActivity(intent);
+            intent.putExtra("Title_KEY", ITEM);
+            intent.putExtra("Schedule_KEY", Integer.toString(ID));
+            if (ID == 0){
+                view.getContext().startActivity(intent);
+            } else if (ID == 1) {
+                ((Activity) view.getContext()).startActivityForResult(intent, 1);
+            }
+
+
         }
 
     }

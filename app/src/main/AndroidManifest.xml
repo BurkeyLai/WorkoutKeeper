@@ -10,17 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".DailyScheduleActivity"
+            android:label="Daily Schedule">
+
+        </activity>
+        <activity
             android:name=".ProgressActivity"
-            android:label="Progress"
-            android:configChanges="orientation|screenSize">
+            android:configChanges="orientation|screenSize"
+            android:label="Progress">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+                <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             </intent-filter>
         </activity>
         <activity
             android:name=".SetsAndRepsActivity"
-            android:label="Sets and Reps">
+            android:label=""
+            android:theme="@style/sets_and_reps_dialog">
+
             <!--
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -31,6 +38,7 @@
             android:name=".TrainingActivity"
             android:label="@string/title_activity_training"
             android:theme="@style/AppTheme.NoActionBar">
+
             <!--
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -40,20 +48,12 @@
         <activity
             android:name=".ChooseBodyPartActivity"
             android:label="Body Part">
-            <!--
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.workoutkeeper.FitnessActivity" />
-            -->
+
         </activity>
         <activity
             android:name=".FitnessActivity"
             android:label="Fitness">
-            <!--
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.workoutkeeper.MainActivity" />
-            -->
+
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>

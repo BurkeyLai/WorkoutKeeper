@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ProgressActivity extends AppCompatActivity {
 
@@ -64,6 +65,7 @@ public class ProgressActivity extends AppCompatActivity {
 
         createNotificationChannel();
         registerReceiver(mReceiver, new IntentFilter(ACTION_UPDATE_NOTIFICATION));
+
     }
 
     @Override
@@ -110,6 +112,12 @@ public class ProgressActivity extends AppCompatActivity {
         // Deliver the notification.
         mNotifyManager.notify(NOTIFICATION_ID, notifyBuilder.build());
 
+        // When sets become 0, backward to previous activity
+        if (Integer.parseInt(setsTextView.getText().toString()) == 0) {
+            displayToast("Great Job! Move Forward!");
+            finish();
+        }
+
         // Enable the update and cancel buttons but disables the "Notify Me!" button.
         //setNotificationButtonState(false, true, true);
     }
@@ -145,6 +153,10 @@ public class ProgressActivity extends AppCompatActivity {
         }
     }
 
+    public void displayToast(String message) {
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
     private void updateProgressBar(int totalSets, int nowSet) {
         int progress = totalSets - nowSet;
         int percent = (progress * 100) / totalSets;
@@ -154,7 +166,6 @@ public class ProgressActivity extends AppCompatActivity {
     }
 
     private void countDown(final int sec, int pause, int reset, int resume) {
-
 
         if(!isCounterRunning && pause == 0 && reset == 0 && isPause == false) { //Begin countdown
             // Decrease the sets by 1
@@ -204,6 +215,7 @@ public class ProgressActivity extends AppCompatActivity {
 
     public void beginToCountdown(View view) {
         countDown(mSec, 0, 0, 0);
+
     }
 
     public void resetCountdown(View view) {

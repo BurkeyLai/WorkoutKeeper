@@ -31,7 +31,8 @@
 
         <ScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/colorShadow">
 
             <LinearLayout
                 android:layout_width="match_parent"

@@ -2,5 +2,11 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <!-- <color name="colorAccent">#D81B60</color> -->
+    <color name="colorAccent">#4169E1</color>
+    <color name="colorTheme">#B0E0E6</color>
+    <color name="colorThemeDark">#40E0D0</color>
+    <color name="colorProgressBar">#FF77FF</color>
+    <color name="colorLavender">#B0E0E6</color>
+    <color name="colorShadow">#E0FFFF</color>
 </resources>

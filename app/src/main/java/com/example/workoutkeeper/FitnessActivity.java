@@ -24,14 +24,10 @@ public class FitnessActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // Handle action bar item clicks here. The action bar will automatically handle clicks on the Home/Up button, so long as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        // This comment suppresses the Android Studio warning about simplifying
-        // the return statements.
-        //noinspection SimplifiableIfStatement
+        // This comment suppresses the Android Studio warning about simplifying the return statements. noinspection SimplifiableIfStatement
         if (id == R.id.rmCounter_settings) {
             return true;
         }
@@ -40,13 +36,24 @@ public class FitnessActivity extends AppCompatActivity {
     }
 
     public void chooseSchedule(View view) {
-
+        /*
         switch (view.getId()) {
             case R.id.choose_schedule_button1:
-                Intent intent = new Intent(this, ChooseBodyPartActivity.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(this, ChooseBodyPartActivity.class);
+                startActivity(intent1);
+            case R.id.choose_schedule_button2:
+                Intent intent2 = new Intent(this, DailyScheduleActivity.class);
+                startActivity(intent2);
             default:
                 break;
+        }
+        */
+        if (view.getId() == R.id.choose_schedule_button1) {
+            Intent intent1 = new Intent(this, ChooseBodyPartActivity.class);
+            startActivity(intent1);
+        } else if (view.getId() == R.id.choose_schedule_button2) {
+            Intent intent2 = new Intent(this, DailyScheduleActivity.class);
+            startActivity(intent2);
         }
     }
 }

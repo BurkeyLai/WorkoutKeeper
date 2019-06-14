@@ -7,18 +7,24 @@ import android.content.Intent;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.LinkedList;
 
@@ -27,17 +33,29 @@ public class SetsAndRepsActivity extends AppCompatActivity implements
 
     private EditText weights_edittext;
     private String mAction, mWeights, mUnit, mSets, mReps, mTime;
+    private Button mNextButton;
+    private int mScheduleID;
+    public static ArrayList<ScheduleListItem> mDailyData = new ArrayList<ScheduleListItem>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sets_and_reps);
 
         Intent intent = getIntent();
-        mAction = intent.getStringExtra(TrainingListAdapter.EXTRA_MESSAGE);
+        mAction = intent.getStringExtra("Title_KEY");
+        String string_id = intent.getStringExtra("Schedule_KEY");
+        mScheduleID = Integer.parseInt(string_id);
         TextView textView = findViewById(R.id.sets_and_reps_title);
         textView.setText(mAction);
 
         weights_edittext = (EditText) findViewById(R.id.weights_edit);
+
+        mNextButton = (Button) findViewById(R.id.next_button);
+
+        if (mScheduleID == 1) {
+            mNextButton.setText("Confirm !");
+        }
 
         //Spinner for weights
         Spinner weightsSpinner = findViewById(R.id.weights_spinner);
@@ -115,40 +133,56 @@ public class SetsAndRepsActivity extends AppCompatActivity implements
 
     }
 
-    public void goToProgress(View view) {
+    public void goToNext(View view) {
 
         mWeights = weights_edittext.getText().toString();
         //Log.d("GOOOOOOOO", mAction + ", " + mWeights + " " + mUnit + ", " + mSets + "sets, " + mReps + "reps, " + mTime);
 
-        if(mWeights.isEmpty()) {
-            displayToast("You must fill the weights blank!");
-        }
-        else {
-            Bundle bundle = new Bundle();
-            bundle.putString("Action_Key", mAction);
-            bundle.putString("Weights_Key", mWeights);
-            bundle.putString("Unit_Key", mUnit);
-            bundle.putString("Sets_Key", mSets);
-            bundle.putString("Reps_Key", mReps);
-            bundle.putString("Time_Key", mTime);
+        if (mScheduleID == 0) {
+            if (mWeights.isEmpty() && !mAction.equals("Push Up") && !mAction.equals("Handstand Push Up")) {
+                displayToast("You must fill the weights blank!");
+            } else {
+                Bundle bundle = new Bundle();
+                bundle.putString("Action_Key", mAction);
+                bundle.putString("Weights_Key", mWeights);
+                bundle.putString("Unit_Key", mUnit);
+                bundle.putString("Sets_Key", mSets);
+                bundle.putString("Reps_Key", mReps);
+                bundle.putString("Time_Key", mTime);
 
-            Intent intent = new Intent(this, ProgressActivity.class);
-            intent.putExtras(bundle);
-            startActivity(intent);
+                Intent intent = new Intent(this, ProgressActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        } else if (mScheduleID == 1) {
+            if (mWeights.isEmpty() && !mAction.equals("Push Up") && !mAction.equals("Handstand Push Up")) {
+                displayToast("You must fill the weights blank!");
+            } else {
+                //dailyListView = (ListView) findViewById(R.id.daily_listView);
+                //dailyListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, new String[]{"一", "二", "三"});
+                //dailyListView.setAdapter(dailyListAdapter);
+
+
+                //Log.d("FUCKKKKKKKKKKKK", Integer.toString(mDailyRecyclerView));
+                //mDailyData.add(new ScheduleListItem(mAction, mWeights, mUnit, mSets, mReps, mTime));
+
+                //displayToast(mDailyData.get(0).getAction());
+                Bundle bundle = new Bundle();
+                bundle.putString("Re_Action_Key", mAction);
+                bundle.putString("Re_Weights_Key", mWeights);
+                bundle.putString("Re_Unit_Key", mUnit);
+                bundle.putString("Re_Sets_Key", mSets);
+                bundle.putString("Re_Reps_Key", mReps);
+                bundle.putString("Re_Time_Key", mTime);
+
+                Intent replyIntent = new Intent();
+                replyIntent.putExtras(bundle);
+
+                setResult(RESULT_OK, replyIntent);
+                finish();
+            }
         }
     }
-    /*
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        mWeights = weights_edittext.getText().toString();
-        if (mWeights.isEmpty() == false) {
-            outState.putString("restore_weights", mWeights);
-            outState.putString("restore_unit", mUnit);
-            outState.putString("restore_sets", mSets);
-            outState.putString("restore_reps", mReps);
-            outState.putString("restore_time", mTime);
-        }
-    }
-    */
+
+
 }
