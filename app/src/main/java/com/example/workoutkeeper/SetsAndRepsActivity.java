@@ -139,7 +139,13 @@ public class SetsAndRepsActivity extends AppCompatActivity implements
         //Log.d("GOOOOOOOO", mAction + ", " + mWeights + " " + mUnit + ", " + mSets + "sets, " + mReps + "reps, " + mTime);
 
         if (mScheduleID == 0) {
-            if (mWeights.isEmpty() && !mAction.equals("Push Up") && !mAction.equals("Handstand Push Up")) {
+            if (mWeights.isEmpty() && !mAction.equals("Push Up") && !mAction.equals("Handstand Push Up")
+                    && !mAction.equals("Narrow Pull Up") && !mAction.equals("Wide Pull Up")
+                    && !mAction.equals("Hardstyle Plank") && !mAction.equals("Dead Bug")
+                    && !mAction.equals("Hollow Extension-To-Cannonball") && !mAction.equals("Crossover Curl")
+                    && !mAction.equals("Decline Curl") && !mAction.equals("Bodyweight Squats")
+                    && !mAction.equals("Reverse Lunges With Knee Lifts") && !mAction.equals("Squat Jumps")
+                    && !mAction.equals("Side Lunges") && !mAction.equals("Single-Leg Calf Raises")) {
                 displayToast("You must fill the weights blank!");
             } else {
                 Bundle bundle = new Bundle();
@@ -155,7 +161,13 @@ public class SetsAndRepsActivity extends AppCompatActivity implements
                 startActivity(intent);
             }
         } else if (mScheduleID == 1) {
-            if (mWeights.isEmpty() && !mAction.equals("Push Up") && !mAction.equals("Handstand Push Up")) {
+            if (mWeights.isEmpty() && !mAction.equals("Push Up") && !mAction.equals("Handstand Push Up")
+                    && !mAction.equals("Narrow Pull Up") && !mAction.equals("Wide Pull Up")
+                    && !mAction.equals("Hardstyle Plank") && !mAction.equals("Dead Bug")
+                    && !mAction.equals("Hollow Extension-To-Cannonball") && !mAction.equals("Crossover Curl")
+                    && !mAction.equals("Decline Curl") && !mAction.equals("Bodyweight Squats")
+                    && !mAction.equals("Reverse Lunges With Knee Lifts") && !mAction.equals("Squat Jumps")
+                    && !mAction.equals("Side Lunges") && !mAction.equals("Single-Leg Calf Raises")) {
                 displayToast("You must fill the weights blank!");
             } else {
                 //dailyListView = (ListView) findViewById(R.id.daily_listView);

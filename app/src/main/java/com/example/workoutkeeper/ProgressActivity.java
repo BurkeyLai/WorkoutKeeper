@@ -5,11 +5,13 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.support.v4.app.NotificationCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -219,7 +221,9 @@ public class ProgressActivity extends AppCompatActivity {
     }
 
     public void resetCountdown(View view) {
-        countDown(mSec, 0, 1, 0);
+        if (isCounterRunning || isPause) {
+            countDown(mSec, 0, 1, 0);
+        }
     }
 
     public void pauseCountdown(View view) {
@@ -229,16 +233,19 @@ public class ProgressActivity extends AppCompatActivity {
         mNowSec = Integer.parseInt(split_time[0]);
 
         if (!isPause && isCounterRunning) { // Pause
+
             isPause = true;
             countDown(mSec, 1, 0, 0);
             pauseButton = findViewById(R.id.pause_counter_button);
             pauseButton.setText("Resume");
         } else if (isPause) { // Resume
+
             isPause = false;
             countDown(mNowSec, 0, 0, 1);
             pauseButton = findViewById(R.id.pause_counter_button);
             pauseButton.setText("Pause");
         }
+        //displayToast("FUCKKKKKKKKKK");
     }
 
     public class NotificationReceiver extends BroadcastReceiver {
@@ -256,6 +263,50 @@ public class ProgressActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             // Update the notification.
             //updateNotification();
+        }
+    }
+
+    // If backward button is pressed.
+    @Override
+    public void onBackPressed() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        if (isCounterRunning) {
+            builder.setTitle("Do tou want to exit?");
+            builder.setMessage("It is still counting.");
+            builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    builder.create();
+                }
+            });
+            builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+
+                    // Cancel the counter
+                    cdt.cancel();
+                    ProgressActivity.super.onBackPressed();
+                }
+            });
+            builder.show();
+        } else if (Integer.parseInt(setsTextView.getText().toString()) < Integer.parseInt(mSets)) {
+            int remain = Integer.parseInt(mSets) - Integer.parseInt(setsTextView.getText().toString());
+            builder.setTitle("Do tou want to exit?");
+            builder.setMessage("You just finished " + remain + " sets......");
+            builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    builder.create();
+                }
+            });
+            builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+
+                    // Cancel the counter
+                    cdt.cancel();
+                    ProgressActivity.super.onBackPressed();
+                }
+            });
+            builder.show();
+        } else {
+            finish();
         }
     }
     /*
