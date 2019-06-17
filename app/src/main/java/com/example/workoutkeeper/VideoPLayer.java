@@ -20,6 +20,7 @@ import static com.google.android.youtube.player.YouTubePlayer.FULLSCREEN_FLAG_AL
 public class VideoPLayer extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
     YouTubePlayerView mYTView;
+
     String key = "AIzaSyAkxssz_Ke5eUwrbpdv5BP_g3JB6wI59t0";
     String id = "Vs7x7eQOl20"; //default video
     @Override

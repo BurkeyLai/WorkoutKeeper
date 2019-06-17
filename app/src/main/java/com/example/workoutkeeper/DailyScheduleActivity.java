@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class DailyScheduleActivity extends FragmentActivity {
     private ArrayList<ScheduleListItem> mDailyData = new ArrayList<>();
     public static final int TEXT_REQUEST = 1;
     private String mAction, mWeights, mUnit, mSets, mReps, mTime;
+    private Button mDoneButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class DailyScheduleActivity extends FragmentActivity {
         int gridColumnCount = 1;
         mDailyRecyclerView = findViewById(R.id.daily_recyclerView);
         mHintText = findViewById(R.id.hint_text);
+        mDoneButton = findViewById(R.id.done_button);
         mDailyRecyclerView.setLayoutManager(new GridLayoutManager(this, gridColumnCount));
         mDailyAdapter = new ScheduleListAdapter(this, mDailyData);
         mDailyRecyclerView.setAdapter(mDailyAdapter);
@@ -107,6 +110,7 @@ public class DailyScheduleActivity extends FragmentActivity {
                 if (mDailyData.size() == 0) {
                     mDailyRecyclerView.setVisibility(View.GONE);
                     mHintText.setVisibility(View.VISIBLE);
+                    mDoneButton.setVisibility(View.GONE);
                 }
                 // Notify the adapter.
                 mDailyAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
@@ -120,6 +124,7 @@ public class DailyScheduleActivity extends FragmentActivity {
         if (mDailyData.size() == 0) {
             mDailyRecyclerView.setVisibility(View.GONE);
             mHintText.setVisibility(View.VISIBLE);
+            mDoneButton.setVisibility(View.GONE);
         }
 
     }
@@ -146,6 +151,7 @@ public class DailyScheduleActivity extends FragmentActivity {
                 // When list is not empty, show the card view
                 mDailyRecyclerView.setVisibility(View.VISIBLE);
                 mHintText.setVisibility(View.GONE);
+                mDoneButton.setVisibility(View.VISIBLE);
 
                 Bundle bundle = data.getExtras(); // Get intent from SetsAndRepsActivity
 

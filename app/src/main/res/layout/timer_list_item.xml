@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/timer_minute"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentLeft="true"
+            android:padding="8dp"
+            android:text=""
+            android:textColor="?android:textColorSecondary"
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/timer_mid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/timer_minute"
+            android:text="  :  "
+            android:padding="4dp"
+            android:textSize="36sp"/>
+
+        <TextView
+            android:id="@+id/timer_second"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/timer_mid"
+            android:padding="8dp"
+            android:text=""
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/timer_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/timer_start"
+            android:layout_centerVertical="true"
+
+            android:text="reset" />
+
+        <Button
+            android:id="@+id/timer_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="start"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_background6"/>
+
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

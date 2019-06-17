@@ -1,5 +1,6 @@
 package com.example.workoutkeeper;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,25 +22,32 @@ public class TrainingActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private TrainingListAdapter mAdapter;
 
+    public static final int TEXT_REQUEST = 1;
+
     private String body_part;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_training);
-        //Toolbar toolbar = findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
+                Intent intent = new Intent(TrainingActivity.this, AddTrainingActivity.class);
+                startActivityForResult(intent, TEXT_REQUEST);
             }
         });
 
         retrieveBodyPart();// Cause error when get back from SetsAndRepsActivity, so I set SetsAndRepsActivity's parent as
                             // ChooseBodyPartActivity in AndroidManifest.xml
+
+        mRecyclerView = findViewById(R.id.recyclerview);
+        mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription, null);
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         if (body_part.equals("chest")) {
             initializeChestData();
@@ -75,10 +83,13 @@ public class TrainingActivity extends AppCompatActivity {
             mRecipeYoutube.addLast(recipeYoutube[i]);
         }
 
+
         mRecyclerView = findViewById(R.id.recyclerview);
         mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription, mRecipeYoutube);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mAdapter.notifyDataSetChanged();
+
     }
 
     private void initializeShoulderData(){
@@ -95,6 +106,8 @@ public class TrainingActivity extends AppCompatActivity {
         mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription, mRecipeYoutube);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mAdapter.notifyDataSetChanged();
+
     }
 
     private void initializeBackData(){
@@ -111,6 +124,7 @@ public class TrainingActivity extends AppCompatActivity {
         mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription, mRecipeYoutube);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mAdapter.notifyDataSetChanged();
     }
 
     private void initializeABSData(){
@@ -123,10 +137,13 @@ public class TrainingActivity extends AppCompatActivity {
             mRecipeYoutube.addLast(recipeYoutube[i]);
         }
 
+
         mRecyclerView = findViewById(R.id.recyclerview);
         mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription, mRecipeYoutube);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mAdapter.notifyDataSetChanged();
+
     }
 
     private void initializeLegData(){
@@ -143,6 +160,7 @@ public class TrainingActivity extends AppCompatActivity {
         mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription, mRecipeYoutube);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mAdapter.notifyDataSetChanged();
     }
 
     private void initializeArmData(){
@@ -154,10 +172,27 @@ public class TrainingActivity extends AppCompatActivity {
             mRecipeDescription.addLast(recipeInfo[i]);
             mRecipeYoutube.addLast(recipeYoutube[i]);
         }
-
         mRecyclerView = findViewById(R.id.recyclerview);
         mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription, mRecipeYoutube);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mAdapter.notifyDataSetChanged();
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode,
+                                 int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == TEXT_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                String RecipeTitle = data.getStringExtra(AddTrainingActivity.EXTRA_TITLE);
+                String RecipeInfo = data.getStringExtra(AddTrainingActivity.EXTRA_INFO);
+
+                mRecipe.addLast(RecipeTitle);
+                mRecipeDescription.addLast(RecipeInfo);
+                mAdapter.notifyDataSetChanged();
+            }
+        }
     }
 }

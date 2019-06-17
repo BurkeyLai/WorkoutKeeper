@@ -41,9 +41,15 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">italic</item>
     </style>
-    
+
     <style name="AppTheme.SlidrActivityTheme">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="activity_styles" parent="Theme.AppCompat.DayNight.Dialog">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:title">@string/RM</item>
     </style>
 </resources>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.workoutkeeper">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,15 +11,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".TimerAddActivity"
+            android:theme="@style/activity_styles">
 
+        </activity>
+        <activity
+            android:name=".TimerActivity"
+            android:label="Timer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RMShowActivity"
+            android:theme="@style/activity_styles" />
+        <activity
+            android:name=".RMCalculatorActivity"
+            android:theme="@style/activity_styles" />
+        <activity
+            android:name=".AddTrainingActivity"
+            android:label="Add Your Own Training" />
         <activity
             android:name=".VideoPLayer"
             android:label="@string/title_activity_video_player"
             android:theme="@style/AppTheme.NoActionBar"
             ></activity>
+
+
         <activity
             android:name=".DailyScheduleActivity"
-            android:label="Daily Schedule"></activity>
+            android:label="Daily Schedule" />
         <activity
             android:name=".ProgressActivity"
             android:configChanges="orientation|screenSize"
@@ -51,10 +72,10 @@
         </activity>
         <activity
             android:name=".ChooseBodyPartActivity"
-            android:label="Body Part"></activity>
+            android:label="Body Part" />
         <activity
             android:name=".FitnessActivity"
-            android:label="Fitness"></activity>
+            android:label="Fitness" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
