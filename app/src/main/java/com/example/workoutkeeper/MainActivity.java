@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.basketball_button:
-                displayToast("Coming soon");
+                Intent intent2 = new Intent(this, Korean_fish.class);
+                startActivity(intent2);
                 break;
             case R.id.jogging_button:
                 displayToast("Coming soon");

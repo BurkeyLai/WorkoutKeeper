@@ -11,11 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Korean_fish"></activity>
         <activity
             android:name=".TimerAddActivity"
-            android:theme="@style/activity_styles">
-
-        </activity>
+            android:theme="@style/activity_styles"></activity>
         <activity
             android:name=".TimerActivity"
             android:label="Timer"
@@ -32,10 +31,7 @@
         <activity
             android:name=".VideoPLayer"
             android:label="@string/title_activity_video_player"
-            android:theme="@style/AppTheme.NoActionBar"
-            ></activity>
-
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DailyScheduleActivity"
             android:label="Daily Schedule" />
