@@ -13,7 +13,7 @@ The apk file is under /WorkoutKeeper/app/debug/app-debug.apk
 ## Authors and Contribution
 
 * **賴柏翔** - main architecture
-* **方志浩** - timer and counter
+* **方志浩** - timer and RMcounter
 * **鄭富澤** - FAB and Training set
 * **陳家年** - Youtube video
 
