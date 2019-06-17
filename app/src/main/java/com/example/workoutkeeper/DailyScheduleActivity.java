@@ -199,25 +199,26 @@ public class DailyScheduleActivity extends FragmentActivity {
     }
 
     public void workoutDone(View view) {
+        if (mDailyData.size() != 0) {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-        builder.setTitle("Workout done?");
-        builder.setMessage("You will lost your scheduled list.");
-        builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                builder.create();
-            }
-        });
-        builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // **********
-                // Save data
-                // **********
-                DailyScheduleActivity.super.onBackPressed();
-            }
-        });
-        builder.show();
+            builder.setTitle("Workout done?");
+            builder.setMessage("You will lost your scheduled list.");
+            builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    builder.create();
+                }
+            });
+            builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    // **********
+                    // Save data
+                    // **********
+                    DailyScheduleActivity.super.onBackPressed();
+                }
+            });
+            builder.show();
+        }
     }
 }
 

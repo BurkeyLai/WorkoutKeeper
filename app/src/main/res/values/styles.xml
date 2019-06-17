@@ -41,4 +41,9 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">italic</item>
     </style>
+    
+    <style name="AppTheme.SlidrActivityTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
 </resources>

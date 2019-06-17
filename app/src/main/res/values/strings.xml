@@ -144,6 +144,14 @@
         <item>Extends your arm, keeping your elbow steady and train your tricep.</item>
     </string-array>
 
+    <string-array name="predefine_menu_titles">
+        <item>Chest Day</item>
+        <item>Back Day</item>
+        <item>Leg Day</item>
+        <item>Shoulder Day</item>
+        <item>Arm Day</item>
+        <item>ABS Day</item>
+    </string-array>
 
     <string-array name="sets_array">
         <item>1</item>
