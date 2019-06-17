@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.fitness_button:
                 Intent intent = new Intent(this, FitnessActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.basketball_button:
+                displayToast("Coming soon");
+                break;
+            case R.id.jogging_button:
+                displayToast("Coming soon");
+                break;
             default:
                 break;
         }
@@ -39,7 +47,10 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.timer_menu, menu);
         return true;
     }
-
+    public void displayToast(String message) {
+        Toast.makeText(getApplicationContext(), message,
+                Toast.LENGTH_SHORT).show();
+    }
 
     public boolean onOptionsItemSelected(MenuItem item) {
 
