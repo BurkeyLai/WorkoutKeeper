@@ -18,6 +18,7 @@ public class TrainingListAdapter extends
 
     private final LinkedList<String> mWordList;
     private final LinkedList<String> mDescriptionList;
+    private final LinkedList<String> mYoutubeList;
     private LayoutInflater mInflater;
     private int schedule;
     //public static final String EXTRA_MESSAGE = "com.example.workoutkeeper.extra.MESSAGE";
@@ -26,12 +27,15 @@ public class TrainingListAdapter extends
     public TrainingListAdapter(Context context,
                            int n,
                            LinkedList<String> wordList,
-                           LinkedList<String> descriptionList ) {
+                           LinkedList<String> descriptionList,
+                               LinkedList<String> youtubeList )
+    {
 
         mInflater = LayoutInflater.from(context);
         schedule = n;
         this.mWordList = wordList;
         this.mDescriptionList = descriptionList;
+        this.mYoutubeList = youtubeList;
     }
 
     class TrainingViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -58,6 +62,8 @@ public class TrainingListAdapter extends
             Intent intent = new Intent(view.getContext(), SetsAndRepsActivity.class);
             intent.putExtra("Title_KEY", ITEM);
             intent.putExtra("Schedule_KEY", Integer.toString(ID));
+            intent.putExtra("youtube_KEY", mYoutubeList.get(mPosition));
+
             if (ID == 0){
                 view.getContext().startActivity(intent);
             } else if (ID == 1) {

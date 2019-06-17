@@ -13,7 +13,8 @@
         <activity
             android:name=".VideoPLayer"
             android:label="@string/title_activity_video_player"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            ></activity>
         <activity
             android:name=".DailyScheduleActivity"
             android:label="Daily Schedule"></activity>

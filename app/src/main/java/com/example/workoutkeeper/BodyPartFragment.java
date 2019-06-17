@@ -22,7 +22,7 @@ public class BodyPartFragment extends Fragment {
     private String body_part;
     private final LinkedList<String> mRecipe = new LinkedList<>();
     private final LinkedList<String> mRecipeDescription = new LinkedList<>();
-
+    private final LinkedList<String> mYoutubeList = new LinkedList<>();
     private RecyclerView mRecyclerView;
     private TrainingListAdapter mAdapter;
 
@@ -41,6 +41,7 @@ public class BodyPartFragment extends Fragment {
         // Make sure that when you switch between each fragment, the fragment layout should be initialized.
         mRecipe.clear();
         mRecipeDescription.clear();
+        mYoutubeList.clear();
         mRecyclerView = null;
         mAdapter = null;
 
@@ -94,16 +95,18 @@ public class BodyPartFragment extends Fragment {
     private void initializeChestData(){
         String[] recipeList = getResources().getStringArray(R.array.chest_recipe_titles);
         String[] recipeInfo = getResources().getStringArray(R.array.chest_recipe_info);
+        String[] recipeYoutube = getResources().getStringArray(R.array.chest_recipe_youtube);
 
         for (int i = 0; i < recipeList.length; i++) {
             mRecipe.addLast(recipeList[i]);
             mRecipeDescription.addLast(recipeInfo[i]);
+            mYoutubeList.addLast(recipeYoutube[i]);
         }
 
         if (getView() != null) {
             mRecyclerView = getView().findViewById(R.id.recyclerview);
         }
-        mAdapter = new TrainingListAdapter(getContext(), 1, mRecipe, mRecipeDescription);
+        mAdapter = new TrainingListAdapter(getContext(), 1, mRecipe, mRecipeDescription, mYoutubeList);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
@@ -111,16 +114,18 @@ public class BodyPartFragment extends Fragment {
     private void initializeShoulderData(){
         String[] recipeList = getResources().getStringArray(R.array.shoulder_recipe_titles);
         String[] recipeInfo = getResources().getStringArray(R.array.shoulder_recipe_info);
+        String[] recipeYoutube = getResources().getStringArray(R.array.shoulder_recipe_youtube);
 
         for (int i = 0; i < recipeList.length; i++) {
             mRecipe.addLast(recipeList[i]);
             mRecipeDescription.addLast(recipeInfo[i]);
+            mYoutubeList.addLast(recipeYoutube[i]);
         }
 
         if (getView() != null) {
             mRecyclerView = getView().findViewById(R.id.recyclerview);
         }
-        mAdapter = new TrainingListAdapter(getContext(), 1, mRecipe, mRecipeDescription);
+        mAdapter = new TrainingListAdapter(getContext(), 1, mRecipe, mRecipeDescription, mYoutubeList);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
@@ -128,16 +133,18 @@ public class BodyPartFragment extends Fragment {
     private void initializeBackData(){
         String[] recipeList = getResources().getStringArray(R.array.back_recipe_titles);
         String[] recipeInfo = getResources().getStringArray(R.array.back_recipe_info);
+        String[] recipeYoutube = getResources().getStringArray(R.array.back_recipe_youtube);
 
         for (int i = 0; i < recipeList.length; i++) {
             mRecipe.addLast(recipeList[i]);
             mRecipeDescription.addLast(recipeInfo[i]);
+            mYoutubeList.addLast(recipeYoutube[i]);
         }
 
         if (getView() != null) {
             mRecyclerView = getView().findViewById(R.id.recyclerview);
         }
-        mAdapter = new TrainingListAdapter(getContext(), 1, mRecipe, mRecipeDescription);
+        mAdapter = new TrainingListAdapter(getContext(), 1, mRecipe, mRecipeDescription, mYoutubeList);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
@@ -145,16 +152,18 @@ public class BodyPartFragment extends Fragment {
     private void initializeABSData(){
         String[] recipeList = getResources().getStringArray(R.array.abs_recipe_titles);
         String[] recipeInfo = getResources().getStringArray(R.array.abs_recipe_info);
+        String[] recipeYoutube = getResources().getStringArray(R.array.abs_recipe_youtube);
 
         for (int i = 0; i < recipeList.length; i++) {
             mRecipe.addLast(recipeList[i]);
             mRecipeDescription.addLast(recipeInfo[i]);
+            mYoutubeList.addLast(recipeYoutube[i]);
         }
 
         if (getView() != null) {
             mRecyclerView = getView().findViewById(R.id.recyclerview);
         }
-        mAdapter = new TrainingListAdapter(getContext(), 1, mRecipe, mRecipeDescription);
+        mAdapter = new TrainingListAdapter(getContext(), 1, mRecipe, mRecipeDescription, mYoutubeList);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
@@ -162,16 +171,18 @@ public class BodyPartFragment extends Fragment {
     private void initializeLegData(){
         String[] recipeList = getResources().getStringArray(R.array.leg_recipe_titles);
         String[] recipeInfo = getResources().getStringArray(R.array.leg_recipe_info);
+        String[] recipeYoutube = getResources().getStringArray(R.array.leg_recipe_youtube);
 
         for (int i = 0; i < recipeList.length; i++) {
             mRecipe.addLast(recipeList[i]);
             mRecipeDescription.addLast(recipeInfo[i]);
+            mYoutubeList.addLast(recipeYoutube[i]);
         }
 
         if (getView() != null) {
             mRecyclerView = getView().findViewById(R.id.recyclerview);
         }
-        mAdapter = new TrainingListAdapter(getContext(), 1, mRecipe, mRecipeDescription);
+        mAdapter = new TrainingListAdapter(getContext(), 1, mRecipe, mRecipeDescription, mYoutubeList);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
@@ -179,16 +190,18 @@ public class BodyPartFragment extends Fragment {
     private void initializeArmData(){
         String[] recipeList = getResources().getStringArray(R.array.arm_recipe_titles);
         String[] recipeInfo = getResources().getStringArray(R.array.arm_recipe_info);
+        String[] recipeYoutube = getResources().getStringArray(R.array.arm_recipe_youtube);
 
         for (int i = 0; i < recipeList.length; i++) {
             mRecipe.addLast(recipeList[i]);
             mRecipeDescription.addLast(recipeInfo[i]);
+            mYoutubeList.addLast(recipeYoutube[i]);
         }
 
         if (getView() != null) {
             mRecyclerView = getView().findViewById(R.id.recyclerview);
         }
-        mAdapter = new TrainingListAdapter(getContext(), 1, mRecipe, mRecipeDescription);
+        mAdapter = new TrainingListAdapter(getContext(), 1, mRecipe, mRecipeDescription, mYoutubeList);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
