@@ -162,7 +162,7 @@
         <item>Hip Abduction</item>
     </string-array>
 
-    <string-array name="leg_recipe_info">
+    <string-array name="leg_recipe_youtube">
         <item>TaM2sgxOduU</item>
         <item>TaM2sgxOduU</item>
         <item>Td_pWCfQzWg</item>
@@ -177,7 +177,7 @@
         <item>TaM2sgxOduU</item>
     </string-array>
 
-    <string-array name="leg_recipe_youtube">
+    <string-array name="leg_recipe_info">
         <item>Put a barbell on your trapezius and hold it tightly, then straight your back and squat slowly.</item>
         <item>Stand with your feet about shoulder-width apart and slightly turned out with your weight in your heels.
             Hinge forward at your hips and sit your butt back into a squat.</item>
