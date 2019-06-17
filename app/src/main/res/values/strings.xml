@@ -5,6 +5,16 @@
     <string name="title_activity_training">Training Recipe</string>
     <string name="training_text">TrainingView</string>
 
+    <string name="RM">RMCalculator</string>
+    <string name="RM_100">100% (Maximum)</string>
+    <string name="RM_95">95% (Strength)</string>
+    <string name="RM_90">90% (Power)</string>
+    <string name="RM_80">80% (Muscle)</string>
+    <string name="RM_70">70% (Stamina)</string>
+    <string name="RM_50">50% (explosiveness)</string>
+    <string name="RM_weight">            Weight            </string>
+    <string name="RM_repetition_times">Repetition times</string>
+
     <string-array name="chest_recipe_titles">
         <item>Barbell Chest Press</item>
         <item>Dumbbell Chest Press</item>
@@ -230,4 +240,5 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_video_player">VideoPLayer</string>
+    <string name="title_activity_timer">TimerActivity</string>
 </resources>

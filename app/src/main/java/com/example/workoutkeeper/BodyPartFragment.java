@@ -2,6 +2,7 @@ package com.example.workoutkeeper;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -26,6 +27,8 @@ public class BodyPartFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private TrainingListAdapter mAdapter;
 
+    public static final int TEXT_REQUEST = 1;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -49,8 +52,8 @@ public class BodyPartFragment extends Fragment {
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                    Intent intent = new Intent(getContext(), AddTrainingActivity.class);
+                    startActivityForResult(intent, TEXT_REQUEST);
                 }
             });
         }
@@ -191,5 +194,25 @@ public class BodyPartFragment extends Fragment {
         mAdapter = new TrainingListAdapter(getContext(), 1, mRecipe, mRecipeDescription);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+    }
+
+    @Override
+    public void onActivityResult(int requestCode,
+                                 int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == TEXT_REQUEST) {
+            if (resultCode == Activity.RESULT_OK) {
+                String RecipeTitle = data.getStringExtra(AddTrainingActivity.EXTRA_TITLE);
+                String RecipeInfo = data.getStringExtra(AddTrainingActivity.EXTRA_INFO);
+                mRecipe.addLast(RecipeTitle);
+                mRecipeDescription.addLast(RecipeInfo);
+                if (getView() != null) {
+                    mRecyclerView = getView().findViewById(R.id.recyclerview);
+                }
+                mAdapter = new TrainingListAdapter(getContext(), 1, mRecipe, mRecipeDescription);
+                mRecyclerView.setAdapter(mAdapter);
+                mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+            }
+        }
     }
 }

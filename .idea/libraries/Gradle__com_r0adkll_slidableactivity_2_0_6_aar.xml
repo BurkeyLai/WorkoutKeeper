@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.r0adkll:slidableactivity:2.0.6@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/slidableactivity-2.0.6.aar/940ced00509c5cf45aab76b77cc2e1cb/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/slidableactivity-2.0.6.aar/940ced00509c5cf45aab76b77cc2e1cb/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/slidableactivity-2.0.6.aar/7224a01ed253691f5291819fa6f32f13/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/slidableactivity-2.0.6.aar/7224a01ed253691f5291819fa6f32f13/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

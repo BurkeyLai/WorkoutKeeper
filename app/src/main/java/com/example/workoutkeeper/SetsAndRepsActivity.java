@@ -57,7 +57,7 @@ public class SetsAndRepsActivity  extends AppCompatActivity implements
         mVideoBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SetsAndRepsActivity.this,VideoPLayer.class));
+                startActivity(new Intent(SetsAndRepsActivity.this, VideoPLayer.class));
             }
         });
 

@@ -1,14 +1,19 @@
 package com.example.workoutkeeper;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +67,49 @@ public class FitnessActivity extends AppCompatActivity {
 
         // This comment suppresses the Android Studio warning about simplifying the return statements. noinspection SimplifiableIfStatement
         if (id == R.id.rmCounter_settings) {
+            Intent intent = new Intent(this, RMCalculatorActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.anatomical_settings) {
+            AlertDialog.Builder myAlertBuilder =
+                    new AlertDialog.Builder(FitnessActivity.this);
+
+            // Set the dialog title and message.
+            myAlertBuilder.setTitle("Muscle");
+            LayoutInflater factory = LayoutInflater.from(FitnessActivity.this);
+
+            final View view = factory.inflate(R.layout.muscle, null);
+
+            ImageView image= (ImageView) view.findViewById(R.id.muscle);
+            image.setImageResource(R.drawable.muscle);
+
+            // Add the dialog buttons.
+            myAlertBuilder.setView(view);
+
+            myAlertBuilder.setPositiveButton("ok",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // User clicked OK button.
+                            Toast.makeText(getApplicationContext(),
+                                    "ok",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+            myAlertBuilder.setNeutralButton("change", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+
+
+                }
+            });
+
+            // Create and show the AlertDialog.
+            myAlertBuilder.show();
+
+
+            displayToast("anatomical");
             return true;
         }
 
@@ -77,6 +125,11 @@ public class FitnessActivity extends AppCompatActivity {
             Intent intent2 = new Intent(this, DailyScheduleActivity.class);
             startActivity(intent2);
         }
+    }
+
+    public void displayToast(String message) {
+        Toast.makeText(getApplicationContext(), message,
+                Toast.LENGTH_SHORT).show();
     }
 
 }

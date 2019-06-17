@@ -15,7 +15,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 public class VideoPLayer extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
     YouTubePlayerView mYTView;
-    String key = "AIzaSyAkxssz_Ke5eUwrbpdv5BP_g3JB6wI59t0";
+    String key = "AIzaSyCpueohYAjoLq0LUNHrrEHEzeBwM5OiYvw";
     String id = "Vs7x7eQOl20";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
