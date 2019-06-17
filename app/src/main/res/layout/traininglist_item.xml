@@ -14,7 +14,9 @@
         <TextView
             android:id="@+id/training_word"
             style="@style/training_title"
+            android:background="@drawable/button_background4"
             android:text="@string/training_text"
+            android:textColor="@color/colorShadow"
             android:textAlignment="center"/>
 
         <TextView

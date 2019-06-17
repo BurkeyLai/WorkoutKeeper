@@ -1,15 +1,18 @@
 package com.example.workoutkeeper;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,6 +23,7 @@ public class DailyScheduleActivity extends FragmentActivity {
 
     private FragmentTabHost mTabHost;
     private RecyclerView mDailyRecyclerView;
+    private TextView mHintText;
     private ScheduleListAdapter mDailyAdapter;
     private ArrayList<ScheduleListItem> mDailyData = new ArrayList<>();
     public static final int TEXT_REQUEST = 1;
@@ -47,6 +51,7 @@ public class DailyScheduleActivity extends FragmentActivity {
 
         int gridColumnCount = 1;
         mDailyRecyclerView = findViewById(R.id.daily_recyclerView);
+        mHintText = findViewById(R.id.hint_text);
         mDailyRecyclerView.setLayoutManager(new GridLayoutManager(this, gridColumnCount));
         mDailyAdapter = new ScheduleListAdapter(this, mDailyData);
         mDailyRecyclerView.setAdapter(mDailyAdapter);
@@ -98,6 +103,11 @@ public class DailyScheduleActivity extends FragmentActivity {
                                  int direction) {
                 // Remove the item from the dataset.
                 mDailyData.remove(viewHolder.getAdapterPosition());
+                // Show up the hint text when list is empty
+                if (mDailyData.size() == 0) {
+                    mDailyRecyclerView.setVisibility(View.GONE);
+                    mHintText.setVisibility(View.VISIBLE);
+                }
                 // Notify the adapter.
                 mDailyAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
             }
@@ -105,6 +115,12 @@ public class DailyScheduleActivity extends FragmentActivity {
 
         // Attach the helper to the RecyclerView.
         helper.attachToRecyclerView(mDailyRecyclerView);
+
+        // Show up the hint text when list is empty
+        if (mDailyData.size() == 0) {
+            mDailyRecyclerView.setVisibility(View.GONE);
+            mHintText.setVisibility(View.VISIBLE);
+        }
 
     }
 
@@ -123,8 +139,14 @@ public class DailyScheduleActivity extends FragmentActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         if (requestCode == TEXT_REQUEST) {
             if (resultCode == RESULT_OK) {
+
+                // When list is not empty, show the card view
+                mDailyRecyclerView.setVisibility(View.VISIBLE);
+                mHintText.setVisibility(View.GONE);
+
                 Bundle bundle = data.getExtras(); // Get intent from SetsAndRepsActivity
 
                 if(bundle != null) {
@@ -152,6 +174,51 @@ public class DailyScheduleActivity extends FragmentActivity {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putParcelableArrayList("daily_data_list", mDailyData);
+    }
+
+    @Override
+    public void onBackPressed() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        if (mDailyData.size() != 0) {
+            builder.setTitle("Do tou want to exit?");
+            builder.setMessage("You will lost your scheduled list.");
+            builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    builder.create();
+                }
+            });
+            builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    DailyScheduleActivity.super.onBackPressed();
+                }
+            });
+            builder.show();
+        } else {
+            finish();
+        }
+    }
+
+    public void workoutDone(View view) {
+        if (mDailyData.size() != 0) {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            builder.setTitle("Workout done?");
+            builder.setMessage("You will lost your scheduled list.");
+            builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    builder.create();
+                }
+            });
+            builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    // **********
+                    // Save data
+                    // **********
+                    DailyScheduleActivity.super.onBackPressed();
+                }
+            });
+            builder.show();
+        }
     }
 }
 

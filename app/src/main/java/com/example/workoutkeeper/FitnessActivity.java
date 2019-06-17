@@ -1,20 +1,53 @@
 package com.example.workoutkeeper;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FitnessActivity extends AppCompatActivity {
+
+    private ViewPager mViewPager;
+    private FitnessPageAdapter viewPagerFragmentAdapter;
+    private List<Fragment> pageList;
+    private List<String> pageTitles;
+    private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_fitness);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        initView();
+        initData();
+
+        viewPagerFragmentAdapter = new FitnessPageAdapter(getSupportFragmentManager(), pageList, pageTitles);
+        mViewPager.setAdapter(viewPagerFragmentAdapter);
+
+        tabLayout.setupWithViewPager(mViewPager);
+    }
+
+    private void initView() {
+        mViewPager = (ViewPager) findViewById(R.id.fitness_pager);
+        tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+    }
+
+    private void initData() {
+        pageList = new ArrayList<Fragment>();
+        pageTitles = new ArrayList<String>();
+        pageList.add(new ChooseSchedulePage());
+        pageList.add(new PreDefineMenuPage());
+        pageTitles.add("Schedule");
+        pageTitles.add("Recommended");
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -36,18 +69,7 @@ public class FitnessActivity extends AppCompatActivity {
     }
 
     public void chooseSchedule(View view) {
-        /*
-        switch (view.getId()) {
-            case R.id.choose_schedule_button1:
-                Intent intent1 = new Intent(this, ChooseBodyPartActivity.class);
-                startActivity(intent1);
-            case R.id.choose_schedule_button2:
-                Intent intent2 = new Intent(this, DailyScheduleActivity.class);
-                startActivity(intent2);
-            default:
-                break;
-        }
-        */
+
         if (view.getId() == R.id.choose_schedule_button1) {
             Intent intent1 = new Intent(this, ChooseBodyPartActivity.class);
             startActivity(intent1);
@@ -56,4 +78,5 @@ public class FitnessActivity extends AppCompatActivity {
             startActivity(intent2);
         }
     }
+
 }

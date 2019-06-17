@@ -7,96 +7,26 @@
     tools:context=".FitnessActivity">
 
     <LinearLayout
-        android:id="@+id/choose_linearlayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_above="@id/choose_linearlayout2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentLeft="true">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/choose_schedule_button1"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_directory"
-            android:background="@drawable/button_background1"
-            android:onClick="chooseSchedule"/>
-
-        <TextView
-            android:id="@+id/choose_schedule_view1"
-            android:layout_width="wrap_content"
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="Straight Begin"
-            android:textSize="20sp"/>
-    </LinearLayout>
+            app:tabSelectedTextColor="@color/colorAccent"
+            app:tabTextColor="@color/colorTheme">
 
-    <LinearLayout
-        android:id="@+id/choose_linearlayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_centerInParent="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentLeft="true">
+        </android.support.design.widget.TabLayout>
 
-        <ImageButton
-            android:id="@+id/choose_schedule_button2"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_one_day"
-            android:background="@drawable/button_background1"
-            android:onClick="chooseSchedule"/>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/fitness_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/choose_schedule_view2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="One Day Schedule"
-            android:textSize="20sp"/>
-    </LinearLayout>
+        </android.support.v4.view.ViewPager>
 
-    <LinearLayout
-        android:id="@+id/choose_linearlayout3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/choose_linearlayout2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentLeft="true">
-
-        <ImageButton
-            android:id="@+id/choose_schedule_button3"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_a_week"
-            android:background="@drawable/button_background1"
-            android:onClick="chooseSchedule"/>
-
-        <TextView
-            android:id="@+id/choose_schedule_view3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="Weekly Schedule"
-            android:textSize="20sp"/>
     </LinearLayout>
 
 </RelativeLayout>

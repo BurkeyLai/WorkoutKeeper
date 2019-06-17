@@ -9,4 +9,6 @@
     <color name="colorProgressBar">#FF77FF</color>
     <color name="colorLavender">#B0E0E6</color>
     <color name="colorShadow">#E0FFFF</color>
+    <color name="colorTiffany">#81D8D0</color>
+    <color name="colorOrangered">#FF4500</color>
 </resources>

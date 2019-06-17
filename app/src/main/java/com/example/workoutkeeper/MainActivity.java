@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     public void chooseWorkout(View view) {
 
         switch (view.getId()) {
-            case R.id.fitness_buttom:
+            case R.id.fitness_button:
                 Intent intent = new Intent(this, FitnessActivity.class);
                 startActivity(intent);
             default:
