@@ -42,16 +42,16 @@
     </string-array>
 
     <string-array name="chest_recipe_youtube">
-        <item>Use barbell to train your chest.</item>
-        <item>Use dumbbell to train your chest.</item>
-        <item>Use cable or machine to train your chest.</item>
-        <item>Use barbell to train your upper chest.</item>
-        <item>Use dumbbell to train your upper chest.</item>
-        <item>Use cable or machine to train your upper chest.</item>
-        <item>Use barbell to train your lower chest.</item>
-        <item>Use dumbbell to train your lower chest.</item>
-        <item>Use cable or machine to train your lower chest.</item>
-        <item>Leaning over and push up to train your chest</item>
+        <item>KHyTxCBJiVY</item>
+        <item>muf8FREy2BE</item>
+        <item>jpfOkOs2Ee4</item>
+        <item>0VXi_cmmLoU</item>
+        <item>9Js4_q88r9A</item>
+        <item>jpfOkOs2Ee4</item>
+        <item>KHyTxCBJiVY</item>
+        <item>muf8FREy2BE</item>
+        <item>jpfOkOs2Ee4</item>
+        <item>KHyTxCBJiVY</item>
     </string-array>
 
 
@@ -73,6 +73,16 @@
         <item>Leaning forward and use dumbbell to train your rear deltoid.</item>
         <item>Use cable or machine to train your rear deltoid.</item>
         <item>Leaning over and push up to train your shoulder</item>
+    </string-array>
+
+    <string-array name="shoulder_recipe_youtube">
+        <item>9EkHLHJNJnk</item>
+        <item>9EkHLHJNJnk</item>
+        <item>9EkHLHJNJnk</item>
+        <item>9EkHLHJNJnk</item>
+        <item>9EkHLHJNJnk</item>
+        <item>9EkHLHJNJnk</item>
+        <item>9EkHLHJNJnk</item>
     </string-array>
 
     <string-array name="back_recipe_titles">
@@ -97,6 +107,17 @@
         <item>Bent your waist with keeping your upper back straight, then holding a barbell and move your waist straight.</item>
     </string-array>
 
+    <string-array name="back_recipe_youtube">
+        <item>zLPhkfJpQCI</item>
+        <item>zLPhkfJpQCI</item>
+        <item>zLPhkfJpQCI</item>
+        <item>zLPhkfJpQCI</item>
+        <item>zLPhkfJpQCI</item>
+        <item>zLPhkfJpQCI</item>
+        <item>zLPhkfJpQCI</item>
+        <item>zLPhkfJpQCI</item>
+    </string-array>
+
     <string-array name="abs_recipe_titles">
         <item>Hardstyle Plank</item>
         <item>Dead Bug</item>
@@ -116,6 +137,16 @@
         <item>Lay on a decline bench and curl your abs upward to make your elbows touching your knees.</item>
     </string-array>
 
+    <string-array name="abs_recipe_youtube">
+        <item>DTPqUJAMt3w</item>
+        <item>DTPqUJAMt3w</item>
+        <item>DTPqUJAMt3w</item>
+        <item>DTPqUJAMt3w</item>
+        <item>DTPqUJAMt3w</item>
+        <item>DTPqUJAMt3w</item>
+    </string-array>
+
+
     <string-array name="leg_recipe_titles">
         <item>Squat</item>
         <item>Bodyweight Squats</item>
@@ -132,6 +163,21 @@
     </string-array>
 
     <string-array name="leg_recipe_info">
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+        <item>Td_pWCfQzWg</item>
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+    </string-array>
+
+    <string-array name="leg_recipe_youtube">
         <item>Put a barbell on your trapezius and hold it tightly, then straight your back and squat slowly.</item>
         <item>Stand with your feet about shoulder-width apart and slightly turned out with your weight in your heels.
             Hinge forward at your hips and sit your butt back into a squat.</item>
@@ -166,6 +212,15 @@
         <item>Lay on a incline bench, keeping your elbows steady and bent your arm to train your bicep.</item>
         <item>The area you really want to tone up for when you are waving.</item>
         <item>Extends your arm, keeping your elbow steady and train your tricep.</item>
+    </string-array>
+
+
+    <string-array name="arm_recipe_youtube">
+        <item>SEpSqPvoaYg</item>
+        <item>SEpSqPvoaYg</item>
+        <item>SEpSqPvoaYg</item>
+        <item>x1U_fV0uScM</item>
+        <item>x1U_fV0uScM</item>
     </string-array>
 
     <string-array name="predefine_menu_titles">

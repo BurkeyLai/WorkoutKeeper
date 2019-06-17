@@ -47,6 +47,11 @@ public class SetsAndRepsActivity  extends AppCompatActivity implements
         mAction = intent.getStringExtra("Title_KEY");
         String string_id = intent.getStringExtra("Schedule_KEY");
         mScheduleID = Integer.parseInt(string_id);
+        String youtubeID = intent.getStringExtra("youtube_KEY");
+        final Intent intent2 = new Intent(this, VideoPLayer.class);
+        intent2.putExtra("youtube_KEY", youtubeID);
+        Log.d("youtube_KEY", youtubeID);
+
         TextView textView = findViewById(R.id.sets_and_reps_title);
         textView.setText(mAction);
 
@@ -57,9 +62,10 @@ public class SetsAndRepsActivity  extends AppCompatActivity implements
         mVideoBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SetsAndRepsActivity.this, VideoPLayer.class));
+                startActivity(intent2);
             }
         });
+
 
 
         if (mScheduleID == 1) {

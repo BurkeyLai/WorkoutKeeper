@@ -137,20 +137,20 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/next_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="32dp"
+                android:onClick="goToNext"
+                android:text="GO !" />
+            <Button
                 android:id="@+id/video_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Demo Video" />
 
-            <Button
-                android:id="@+id/next_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:text="GO !"
-                android:onClick="goToNext"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

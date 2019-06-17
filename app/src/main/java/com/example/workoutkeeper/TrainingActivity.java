@@ -17,6 +17,7 @@ public class TrainingActivity extends AppCompatActivity {
 
     private final LinkedList<String> mRecipe = new LinkedList<>();
     private final LinkedList<String> mRecipeDescription = new LinkedList<>();
+    private final LinkedList<String> mRecipeYoutube = new LinkedList<>();
 
     private RecyclerView mRecyclerView;
     private TrainingListAdapter mAdapter;
@@ -44,7 +45,7 @@ public class TrainingActivity extends AppCompatActivity {
                             // ChooseBodyPartActivity in AndroidManifest.xml
 
         mRecyclerView = findViewById(R.id.recyclerview);
-        mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription);
+        mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription, null);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -74,68 +75,110 @@ public class TrainingActivity extends AppCompatActivity {
     private void initializeChestData(){
         String[] recipeList = getResources().getStringArray(R.array.chest_recipe_titles);
         String[] recipeInfo = getResources().getStringArray(R.array.chest_recipe_info);
+        String[] recipeYoutube = getResources().getStringArray(R.array.chest_recipe_youtube);
 
         for (int i = 0; i < recipeList.length; i++) {
             mRecipe.addLast(recipeList[i]);
             mRecipeDescription.addLast(recipeInfo[i]);
+            mRecipeYoutube.addLast(recipeYoutube[i]);
         }
+
+
+        mRecyclerView = findViewById(R.id.recyclerview);
+        mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription, mRecipeYoutube);
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter.notifyDataSetChanged();
+
     }
 
     private void initializeShoulderData(){
         String[] recipeList = getResources().getStringArray(R.array.shoulder_recipe_titles);
         String[] recipeInfo = getResources().getStringArray(R.array.shoulder_recipe_info);
-
+        String[] recipeYoutube = getResources().getStringArray(R.array.shoulder_recipe_youtube);
         for (int i = 0; i < recipeList.length; i++) {
             mRecipe.addLast(recipeList[i]);
             mRecipeDescription.addLast(recipeInfo[i]);
+            mRecipeYoutube.addLast(recipeYoutube[i]);
         }
+
+        mRecyclerView = findViewById(R.id.recyclerview);
+        mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription, mRecipeYoutube);
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter.notifyDataSetChanged();
+
     }
 
     private void initializeBackData(){
         String[] recipeList = getResources().getStringArray(R.array.back_recipe_titles);
         String[] recipeInfo = getResources().getStringArray(R.array.back_recipe_info);
-
+        String[] recipeYoutube = getResources().getStringArray(R.array.back_recipe_youtube);
         for (int i = 0; i < recipeList.length; i++) {
             mRecipe.addLast(recipeList[i]);
             mRecipeDescription.addLast(recipeInfo[i]);
+            mRecipeYoutube.addLast(recipeYoutube[i]);
         }
+
+        mRecyclerView = findViewById(R.id.recyclerview);
+        mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription, mRecipeYoutube);
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter.notifyDataSetChanged();
     }
 
     private void initializeABSData(){
         String[] recipeList = getResources().getStringArray(R.array.abs_recipe_titles);
         String[] recipeInfo = getResources().getStringArray(R.array.abs_recipe_info);
-
+        String[] recipeYoutube = getResources().getStringArray(R.array.abs_recipe_youtube);
         for (int i = 0; i < recipeList.length; i++) {
             mRecipe.addLast(recipeList[i]);
             mRecipeDescription.addLast(recipeInfo[i]);
+            mRecipeYoutube.addLast(recipeYoutube[i]);
         }
+
+
+        mRecyclerView = findViewById(R.id.recyclerview);
+        mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription, mRecipeYoutube);
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter.notifyDataSetChanged();
+
     }
 
     private void initializeLegData(){
         String[] recipeList = getResources().getStringArray(R.array.leg_recipe_titles);
         String[] recipeInfo = getResources().getStringArray(R.array.leg_recipe_info);
-
+        String[] recipeYoutube = getResources().getStringArray(R.array.leg_recipe_youtube);
         for (int i = 0; i < recipeList.length; i++) {
             mRecipe.addLast(recipeList[i]);
             mRecipeDescription.addLast(recipeInfo[i]);
+            mRecipeYoutube.addLast(recipeYoutube[i]);
         }
+
+        mRecyclerView = findViewById(R.id.recyclerview);
+        mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription, mRecipeYoutube);
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter.notifyDataSetChanged();
     }
 
     private void initializeArmData(){
         String[] recipeList = getResources().getStringArray(R.array.arm_recipe_titles);
         String[] recipeInfo = getResources().getStringArray(R.array.arm_recipe_info);
-
+        String[] recipeYoutube = getResources().getStringArray(R.array.arm_recipe_youtube);
         for (int i = 0; i < recipeList.length; i++) {
             mRecipe.addLast(recipeList[i]);
             mRecipeDescription.addLast(recipeInfo[i]);
+            mRecipeYoutube.addLast(recipeYoutube[i]);
         }
+        mRecyclerView = findViewById(R.id.recyclerview);
+        mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription, mRecipeYoutube);
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter.notifyDataSetChanged();
     }
+
 
     @Override
     public void onActivityResult(int requestCode,
