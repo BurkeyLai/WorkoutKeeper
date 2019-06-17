@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.workoutkeeper">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,10 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".VideoPLayer"
+            android:label="@string/title_activity_video_player"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".DailyScheduleActivity"
-            android:label="Daily Schedule">
-
-        </activity>
+            android:label="Daily Schedule"></activity>
         <activity
             android:name=".ProgressActivity"
             android:configChanges="orientation|screenSize"
@@ -47,14 +49,10 @@
         </activity>
         <activity
             android:name=".ChooseBodyPartActivity"
-            android:label="Body Part">
-
-        </activity>
+            android:label="Body Part"></activity>
         <activity
             android:name=".FitnessActivity"
-            android:label="Fitness">
-
-        </activity>
+            android:label="Fitness"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

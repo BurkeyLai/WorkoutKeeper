@@ -28,13 +28,14 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.LinkedList;
 
-public class SetsAndRepsActivity extends AppCompatActivity implements
-        AdapterView.OnItemSelectedListener{
+public class SetsAndRepsActivity  extends AppCompatActivity implements
+        AdapterView.OnItemSelectedListener {
 
     private EditText weights_edittext;
     private String mAction, mWeights, mUnit, mSets, mReps, mTime;
     private Button mNextButton;
     private int mScheduleID;
+    private Button mVideoBt;
     public static ArrayList<ScheduleListItem> mDailyData = new ArrayList<ScheduleListItem>();
 
     @Override
@@ -52,6 +53,14 @@ public class SetsAndRepsActivity extends AppCompatActivity implements
         weights_edittext = (EditText) findViewById(R.id.weights_edit);
 
         mNextButton = (Button) findViewById(R.id.next_button);
+        mVideoBt = findViewById(R.id.video_button);
+        mVideoBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SetsAndRepsActivity.this,VideoPLayer.class));
+            }
+        });
+
 
         if (mScheduleID == 1) {
             mNextButton.setText("Confirm !");
@@ -98,6 +107,7 @@ public class SetsAndRepsActivity extends AppCompatActivity implements
         if (restSpinner != null) {
             restSpinner.setAdapter(restAdapter);
         }
+
 
     }
 

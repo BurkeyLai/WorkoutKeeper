@@ -31,6 +31,20 @@
         <item>Leaning over and push up to train your chest</item>
     </string-array>
 
+    <string-array name="chest_recipe_youtube">
+        <item>Use barbell to train your chest.</item>
+        <item>Use dumbbell to train your chest.</item>
+        <item>Use cable or machine to train your chest.</item>
+        <item>Use barbell to train your upper chest.</item>
+        <item>Use dumbbell to train your upper chest.</item>
+        <item>Use cable or machine to train your upper chest.</item>
+        <item>Use barbell to train your lower chest.</item>
+        <item>Use dumbbell to train your lower chest.</item>
+        <item>Use cable or machine to train your lower chest.</item>
+        <item>Leaning over and push up to train your chest</item>
+    </string-array>
+
+
     <string-array name="shoulder_recipe_titles">
         <item>Shoulder Press</item>
         <item>Front Raise</item>
@@ -204,4 +218,5 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_activity_video_player">VideoPLayer</string>
 </resources>
