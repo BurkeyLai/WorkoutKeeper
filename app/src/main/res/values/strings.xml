@@ -11,9 +11,11 @@
     <string name="RM_90">90% (Power)</string>
     <string name="RM_80">80% (Muscle)</string>
     <string name="RM_70">70% (Stamina)</string>
-    <string name="RM_50">50% (explosiveness)</string>
+    <string name="RM_50">50% (Explosiveness)</string>
     <string name="RM_weight">            Weight            </string>
     <string name="RM_repetition_times">Repetition times</string>
+    <string name="title_rm">RM</string>
+    <string name="title_calculator">calculator</string>
 
     <string-array name="chest_recipe_titles">
         <item>Barbell Chest Press</item>
@@ -42,16 +44,16 @@
     </string-array>
 
     <string-array name="chest_recipe_youtube">
-        <item>Use barbell to train your chest.</item>
-        <item>Use dumbbell to train your chest.</item>
-        <item>Use cable or machine to train your chest.</item>
-        <item>Use barbell to train your upper chest.</item>
-        <item>Use dumbbell to train your upper chest.</item>
-        <item>Use cable or machine to train your upper chest.</item>
-        <item>Use barbell to train your lower chest.</item>
-        <item>Use dumbbell to train your lower chest.</item>
-        <item>Use cable or machine to train your lower chest.</item>
-        <item>Leaning over and push up to train your chest</item>
+        <item>KHyTxCBJiVY</item>
+        <item>muf8FREy2BE</item>
+        <item>jpfOkOs2Ee4</item>
+        <item>0VXi_cmmLoU</item>
+        <item>9Js4_q88r9A</item>
+        <item>jpfOkOs2Ee4</item>
+        <item>KHyTxCBJiVY</item>
+        <item>muf8FREy2BE</item>
+        <item>jpfOkOs2Ee4</item>
+        <item>KHyTxCBJiVY</item>
     </string-array>
 
 
@@ -73,6 +75,16 @@
         <item>Leaning forward and use dumbbell to train your rear deltoid.</item>
         <item>Use cable or machine to train your rear deltoid.</item>
         <item>Leaning over and push up to train your shoulder</item>
+    </string-array>
+
+    <string-array name="shoulder_recipe_youtube">
+        <item>9EkHLHJNJnk</item>
+        <item>9EkHLHJNJnk</item>
+        <item>9EkHLHJNJnk</item>
+        <item>9EkHLHJNJnk</item>
+        <item>9EkHLHJNJnk</item>
+        <item>9EkHLHJNJnk</item>
+        <item>9EkHLHJNJnk</item>
     </string-array>
 
     <string-array name="back_recipe_titles">
@@ -97,6 +109,17 @@
         <item>Bent your waist with keeping your upper back straight, then holding a barbell and move your waist straight.</item>
     </string-array>
 
+    <string-array name="back_recipe_youtube">
+        <item>zLPhkfJpQCI</item>
+        <item>zLPhkfJpQCI</item>
+        <item>zLPhkfJpQCI</item>
+        <item>zLPhkfJpQCI</item>
+        <item>zLPhkfJpQCI</item>
+        <item>zLPhkfJpQCI</item>
+        <item>zLPhkfJpQCI</item>
+        <item>zLPhkfJpQCI</item>
+    </string-array>
+
     <string-array name="abs_recipe_titles">
         <item>Hardstyle Plank</item>
         <item>Dead Bug</item>
@@ -114,6 +137,15 @@
         <item>Holding a dumbbell with one hand and curl your body toward the empty-hand side.</item>
         <item>Holding a plate and curl your abdomen, then twist your abs toward left and right repeatedly. </item>
         <item>Lay on a decline bench and curl your abs upward to make your elbows touching your knees.</item>
+    </string-array>
+
+    <string-array name="abs_recipe_youtube">
+        <item>DTPqUJAMt3w</item>
+        <item>DTPqUJAMt3w</item>
+        <item>DTPqUJAMt3w</item>
+        <item>DTPqUJAMt3w</item>
+        <item>DTPqUJAMt3w</item>
+        <item>DTPqUJAMt3w</item>
     </string-array>
 
     <string-array name="leg_recipe_titles">
@@ -152,6 +184,21 @@
         <item>Training your Abductor muscle.</item>
     </string-array>
 
+    <string-array name="leg_recipe_youtube">
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+        <item>Td_pWCfQzWg</item>
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+        <item>TaM2sgxOduU</item>
+    </string-array>
+
     <string-array name="arm_recipe_titles">
         <item>Biceps Curl</item>
         <item>Bent over dumbbell row</item>
@@ -166,6 +213,14 @@
         <item>Lay on a incline bench, keeping your elbows steady and bent your arm to train your bicep.</item>
         <item>The area you really want to tone up for when you are waving.</item>
         <item>Extends your arm, keeping your elbow steady and train your tricep.</item>
+    </string-array>
+
+    <string-array name="arm_recipe_youtube">
+        <item>SEpSqPvoaYg</item>
+        <item>SEpSqPvoaYg</item>
+        <item>SEpSqPvoaYg</item>
+        <item>x1U_fV0uScM</item>
+        <item>x1U_fV0uScM</item>
     </string-array>
 
     <string-array name="predefine_menu_titles">
@@ -231,9 +286,9 @@
         <item>100 s</item>
         <item>110 s</item>
         <item>120 s</item>
-        <item>3 min</item>
-        <item>4 min</item>
-        <item>5 min</item>
+        <item>180 s</item>
+        <item>240 s</item>
+        <item>300 s</item>
     </string-array>
     <string name="title_activity_daily_schedule">DailyScheduleActivity</string>
     <string name="title_home">Home</string>
@@ -241,4 +296,79 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_video_player">VideoPLayer</string>
     <string name="title_activity_timer">TimerActivity</string>
+    <string name="enter_your_action">Enter Your Action:</string>
+    <string name="edit_action">Action</string>
+    <string name="enter_description">Enter Description:</string>
+    <string name="edit_description">Description</string>
+    <string name="add_training_button">Add</string>
+    <string name="straight_begin">Straight Begin</string>
+    <string name="one_day_schedule">One Day Schedule</string>
+    <string name="weekly_schedule">Weekly Schedule</string>
+    <string name="tab_schedule">Schedule</string>
+    <string name="tab_recommended">Recommended</string>
+    <string name="dialog_muscle_title">Muscle</string>
+    <string name="dialog_muscle_ok">ok</string>
+    <string name="dialog_muscle_toast">anatomical</string>
+    <string name="rm_dialog_weight_is_empty">Weight is empty</string>
+    <string name="rm_dialog_rep_is_empty">Repetition times is empty</string>
+    <string name="rm_dialog_weight_must_bigger_than_zero">Weight must bigger than zero</string>
+    <string name="rm_dialog_rep_times">Repetition times must between one to twelve</string>
+    <string name="confirm_show_me">SHOW ME</string>
+    <string name="toolbar_fitness">Fitness</string>
+    <string name="timer_pause">pause</string>
+    <string name="timer_start">start</string>
+    <string name="timer_please_enter">Please enter at least one number</string>
+    <string name="timer_seconds_range">Seconds must between 0 and 60</string>
+    <string name="toolbar_timer">Timer</string>
+    <string name="addtimer_minutes">Minutes</string>
+    <string name="addtimer_seconds">Seconds</string>
+    <string name="addtimer_set">Set</string>
+    <string name="timer_reset">reset</string>
+    <string name="toolbar_bodypart">Body Part</string>
+    <string name="bodypart_chest">Chest</string>
+    <string name="bodypart_shoulder">Shoulder</string>
+    <string name="bodypart_back">Back</string>
+    <string name="bodypart_abs">ABS</string>
+    <string name="bodypart_leg">Leg</string>
+    <string name="bodypart_arm">Arm</string>
+    <string name="training_reset">Reset</string>
+    <string name="schedule_list_hint">Schedule List</string>
+    <string name="schedule_list_done">Done</string>
+    <string name="back_pressed_title">Do tou want to exit?</string>
+    <string name="back_pressed_message">You will lost your scheduled list.</string>
+    <string name="back_pressed_no">No</string>
+    <string name="back_pressed_yes">Yes</string>
+    <string name="workout_done_title">Workout done?</string>
+    <string name="workout_done_message">You will lost your scheduled list.</string>
+    <string name="workout_done_no">No</string>
+    <string name="workout_done_yes">Yes</string>
+    <string name="reset_title">Do tou want to reset?</string>
+    <string name="reset_message">Your custom items will be deleted.</string>
+    <string name="reset_no">No</string>
+    <string name="reset_yes">Yes</string>
+    <string name="toolbar_add_your_own_training">Add Your Own Training</string>
+    <string name="setting_confirm">Confirm !</string>
+    <string name="setting_go">GO !</string>
+    <string name="setting_demo_video">Demo Video</string>
+    <string name="setting_rest_time">Rest Time</string>
+    <string name="setting_reps">Reps</string>
+    <string name="setting_sets">Sets</string>
+    <string name="setting_weights">Weights</string>
+    <string name="progress_sets">Sets:</string>
+    <string name="progress_reps">Reps:</string>
+    <string name="progress_take_a_breath">Take a breath</string>
+    <string name="progress_pause">Pause</string>
+    <string name="progress_reset">Reset</string>
+    <string name="progress_resume">Resume</string>
+    <string name="toolbar_progress">Progress</string>
+    <string name="progress_great_job">Great Job! Move Forward!</string>
+    <string name="progress_timeup">Time\'s up!</string>
+    <string name="progress_move">Move your big bottom!</string>
+    <string name="progress_exit">Do tou want to exit?</string>
+    <string name="progress_still_counting">It is still counting.</string>
+    <string name="progress_exit_no">No</string>
+    <string name="progress_exit_yes">Yes</string>
+    <string name="progress_you_just_finish">You just finished</string>
+    <string name="progress_remain_sets">sets......</string>
+
 </resources>

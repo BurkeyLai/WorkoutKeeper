@@ -47,7 +47,7 @@
             android:layout_toLeftOf="@+id/timer_start"
             android:layout_centerVertical="true"
 
-            android:text="reset" />
+            android:text="@string/timer_reset" />
 
         <Button
             android:id="@+id/timer_start"
@@ -57,7 +57,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="8dp"
             android:layout_marginEnd="8dp"
-            android:text="start"
+            android:text="@string/timer_start"
             android:textColor="#FFFFFF"
             android:background="@drawable/button_background6"/>
 

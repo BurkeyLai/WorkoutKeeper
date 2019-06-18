@@ -1,6 +1,8 @@
 package com.example.workoutkeeper;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -45,11 +47,22 @@ public class PreDefineMenuAdapter extends
         }
 
         @Override
-        public void onClick(View v) {
+        public void onClick(View view) {
+            int mPosition = getLayoutPosition();
+            String ITEM = mTitleList.get(mPosition);
+            String FROM_RECOMMENDED = "yes";
+
+            Bundle bundle = new Bundle();
+            bundle.putString("Pos_Key", Integer.toString(mPosition));
+            bundle.putString("Title_Key", ITEM);
+            bundle.putString("From_Key", FROM_RECOMMENDED);
+
+            Intent intent = new Intent(view.getContext(), DailyScheduleActivity.class);
+            intent.putExtras(bundle);
+            view.getContext().startActivity(intent);
 
         }
     }
-
 
     @NonNull
     @Override

@@ -41,7 +41,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:text="Straight Begin"
+                android:text="@string/straight_begin"
                 android:textSize="20sp"/>
         </LinearLayout>
 
@@ -70,7 +70,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:text="One Day Schedule"
+                android:text="@string/one_day_schedule"
                 android:textSize="20sp"/>
         </LinearLayout>
 
@@ -99,7 +99,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:text="Weekly Schedule"
+                android:text="@string/weekly_schedule"
                 android:textSize="20sp"/>
         </LinearLayout>
     </LinearLayout>

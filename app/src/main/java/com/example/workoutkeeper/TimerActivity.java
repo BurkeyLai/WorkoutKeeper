@@ -117,7 +117,7 @@ public class TimerActivity extends AppCompatActivity {
                 if(bundle != null) {
                     M = bundle.getInt("Minute");
                     S = bundle.getInt("Second");
-                    Log.d("MIN",Integer.toString(M)+"SD"+Integer.toString(S));
+                    //Log.d("MIN",Integer.toString(M)+"SD"+Integer.toString(S));
                 }
 
                 TimerData.add(new TimerItems(Integer.toString(M),Integer.toString(S)));
@@ -132,7 +132,7 @@ public class TimerActivity extends AppCompatActivity {
                 M = bundle.getInt("Minute");
                 S = bundle.getInt("Second");
                 P = bundle.getInt("Position");
-                Log.d("MIN",Integer.toString(P));
+                //Log.d("MIN",Integer.toString(P));
 
             }
             TimerItems currentItem = TimerData.get(P);

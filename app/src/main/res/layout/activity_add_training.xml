@@ -27,7 +27,7 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enter Your Action:"
+                android:text="@string/enter_your_action"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold"
                 android:textSize="20sp"/>
@@ -39,7 +39,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:ems="10"
-                android:hint="Action"
+                android:hint="@string/edit_action"
                 android:textColorHint="@color/colorShadow"
                 android:inputType="textPersonName" />
         </LinearLayout>
@@ -55,7 +55,7 @@
                 android:id="@+id/recipe_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enter Description:"
+                android:text="@string/enter_description"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold"
                 android:textSize="20sp"/>
@@ -68,7 +68,7 @@
                 android:layout_marginStart="8dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:hint="Description"
+                android:hint="@string/edit_description"
                 android:textColorHint="@color/colorShadow"/>
         </LinearLayout>
 
@@ -79,7 +79,7 @@
             android:layout_marginTop="16dp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/button_background5"
-            android:text="Add"
+            android:text="@string/add_training_button"
             android:textColor="#FFFFFF"
             android:onClick="SendData" />
 

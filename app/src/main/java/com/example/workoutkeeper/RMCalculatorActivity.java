@@ -25,12 +25,12 @@ public class RMCalculatorActivity extends AppCompatActivity {
 
 
         if (Weight.getText().toString().isEmpty()){
-            displayToast("Weight is empty");
+            displayToast(getString(R.string.rm_dialog_weight_is_empty));
 
         }
 
         else if (Rtimes.getText().toString().isEmpty()){
-            displayToast("Repetition times is empty");
+            displayToast(getString(R.string.rm_dialog_rep_is_empty));
         }
 
         else {
@@ -41,11 +41,11 @@ public class RMCalculatorActivity extends AppCompatActivity {
 
         if (W <= 0){
 
-            displayToast("Weight must bigger than zero");
+            displayToast(getString(R.string.rm_dialog_weight_must_bigger_than_zero));
         }
 
         else if (T<=0 || T>12){
-            displayToast("Repetition times must between one to twelve");
+            displayToast(getString(R.string.rm_dialog_rep_times));
         }
 
         else {

@@ -51,8 +51,8 @@ public class FitnessActivity extends AppCompatActivity {
         pageTitles = new ArrayList<String>();
         pageList.add(new ChooseSchedulePage());
         pageList.add(new PreDefineMenuPage());
-        pageTitles.add("Schedule");
-        pageTitles.add("Recommended");
+        pageTitles.add(getString(R.string.tab_schedule));
+        pageTitles.add(getString(R.string.tab_recommended));
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -75,7 +75,7 @@ public class FitnessActivity extends AppCompatActivity {
                     new AlertDialog.Builder(FitnessActivity.this);
 
             // Set the dialog title and message.
-            myAlertBuilder.setTitle("Muscle");
+            myAlertBuilder.setTitle(R.string.dialog_muscle_title);
             LayoutInflater factory = LayoutInflater.from(FitnessActivity.this);
 
             final View view = factory.inflate(R.layout.muscle, null);
@@ -86,30 +86,21 @@ public class FitnessActivity extends AppCompatActivity {
             // Add the dialog buttons.
             myAlertBuilder.setView(view);
 
-            myAlertBuilder.setPositiveButton("ok",
+            myAlertBuilder.setPositiveButton(R.string.dialog_muscle_ok,
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             // User clicked OK button.
                             Toast.makeText(getApplicationContext(),
-                                    "ok",
+                                    R.string.dialog_muscle_ok,
                                     Toast.LENGTH_SHORT).show();
                         }
                     });
-
-            myAlertBuilder.setNeutralButton("change", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-
-
-
-                }
-            });
 
             // Create and show the AlertDialog.
             myAlertBuilder.show();
 
 
-            displayToast("anatomical");
+            displayToast(getString(R.string.dialog_muscle_toast));
             return true;
         }
 

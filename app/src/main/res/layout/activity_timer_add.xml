@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Timer"
+                android:text="@string/toolbar_timer"
                 android:textSize="36sp" />
 
 
@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Minutes"
+                android:text="@string/addtimer_minutes"
                 android:textStyle="bold" />
 
             <EditText
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Second"
+                android:text="@string/addtimer_seconds"
                 android:textStyle="bold" />
 
             <EditText
@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="Set"
-                android:text="Set"
+                android:text="@string/addtimer_set"
                 android:background="@android:color/black"
                 android:textColor="@android:color/white"
                 />

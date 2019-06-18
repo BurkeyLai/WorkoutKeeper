@@ -44,7 +44,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:text="Chest"
+                android:text="@string/bodypart_chest"
                 android:textSize="20sp"/>
         </LinearLayout>
 
@@ -73,7 +73,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:text="Shoulder"
+                android:text="@string/bodypart_shoulder"
                 android:textSize="20sp"/>
         </LinearLayout>
 
@@ -117,7 +117,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:text="Back"
+                android:text="@string/bodypart_back"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -146,7 +146,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:text="ABS"
+                android:text="@string/bodypart_abs"
                 android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
@@ -189,7 +189,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:text="Leg"
+                android:text="@string/bodypart_leg"
                 android:textSize="20sp"/>
         </LinearLayout>
 
@@ -218,7 +218,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:text="Arm"
+                android:text="@string/bodypart_arm"
                 android:textSize="20sp"/>
         </LinearLayout>
 

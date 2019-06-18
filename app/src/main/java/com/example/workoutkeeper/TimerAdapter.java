@@ -83,9 +83,9 @@ public class TimerAdapter extends RecyclerView.Adapter<TimerAdapter.ViewHolder> 
         @Override
         public void onClick(View view) {
             if (view.getId() == btn_start.getId()) {
-                Log.d("name",btn_start.getText().toString());
-                if (btn_start.getText().toString().equals("start")) {
-                    btn_start.setText("pause");
+                //Log.d("name",btn_start.getText().toString());
+                if (btn_start.getText().toString().equals("start") || btn_start.getText().toString().equals("開始")) {
+                    btn_start.setText(R.string.timer_pause);
                     final TimerItems currentItem = TimerData.get(getAdapterPosition());
                     final int min = Integer.valueOf(currentItem.getMinute());
                     final int sec = Integer.valueOf(currentItem.getSecond());
@@ -122,10 +122,10 @@ public class TimerAdapter extends RecyclerView.Adapter<TimerAdapter.ViewHolder> 
                 }
                 else{
                     final TimerItems currentItem = TimerData.get(getAdapterPosition());
-                    Log.d("reset",currentItem.getMinute());
+                    //Log.d("reset",currentItem.getMinute());
                     CountDownTimer c =currentItem.getCdt();
                     c.cancel();
-                    btn_start.setText("start");
+                    btn_start.setText(R.string.timer_start);
                 }
             }
 
@@ -137,12 +137,12 @@ public class TimerAdapter extends RecyclerView.Adapter<TimerAdapter.ViewHolder> 
                 notifyDataSetChanged();
                 CountDownTimer c = currentItem.getCdt();
                 c.cancel();
-                btn_start.setText("start");
+                btn_start.setText(R.string.timer_start);
             }
             else{
                 Bundle bundle = new Bundle();
                 bundle.putInt("Position", getAdapterPosition());
-                Log.d("position",Integer.toString(getAdapterPosition()));
+                //Log.d("position",Integer.toString(getAdapterPosition()));
                 Intent intent = new Intent(view.getContext(), TimerAddActivity.class);
                 intent.putExtras(bundle);
                 ((Activity) view.getContext()).startActivityForResult(intent,2);

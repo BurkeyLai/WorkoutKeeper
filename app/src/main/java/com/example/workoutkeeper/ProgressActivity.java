@@ -116,7 +116,7 @@ public class ProgressActivity extends AppCompatActivity {
 
         // When sets become 0, backward to previous activity
         if (Integer.parseInt(setsTextView.getText().toString()) == 0) {
-            displayToast("Great Job! Move Forward!");
+            displayToast(getString(R.string.progress_great_job));
             finish();
         }
 
@@ -134,8 +134,8 @@ public class ProgressActivity extends AppCompatActivity {
         // Build the notification with all of the parameters.
         NotificationCompat.Builder notifyBuilder = new NotificationCompat
                 .Builder(this, PRIMARY_CHANNEL_ID)
-                .setContentTitle("Time's out!")
-                .setContentText("Move your big bottom!")
+                .setContentTitle(getString(R.string.progress_timeup))
+                .setContentText(getString(R.string.progress_move))
                 .setSmallIcon(R.drawable.ic_counter)
                 .setAutoCancel(true).setContentIntent(notificationPendingIntent)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -203,8 +203,8 @@ public class ProgressActivity extends AppCompatActivity {
             String resetToBegin = Integer.toString(sec) + " s";
             timeTextView.setText(resetToBegin);
             pauseButton = findViewById(R.id.pause_counter_button);
-            if (pauseButton.getText().toString().equals("Resume")) {
-                pauseButton.setText("Pause");
+            if (pauseButton.getText().toString().equals("Resume") || pauseButton.getText().toString().equals("繼續")) {
+                pauseButton.setText(R.string.progress_pause);
                 isPause = false;
             }
 
@@ -237,13 +237,13 @@ public class ProgressActivity extends AppCompatActivity {
             isPause = true;
             countDown(mSec, 1, 0, 0);
             pauseButton = findViewById(R.id.pause_counter_button);
-            pauseButton.setText("Resume");
+            pauseButton.setText(R.string.progress_resume);
         } else if (isPause) { // Resume
 
             isPause = false;
             countDown(mNowSec, 0, 0, 1);
             pauseButton = findViewById(R.id.pause_counter_button);
-            pauseButton.setText("Pause");
+            pauseButton.setText(R.string.progress_pause);
         }
         //displayToast("FUCKKKKKKKKKK");
     }
@@ -271,14 +271,14 @@ public class ProgressActivity extends AppCompatActivity {
     public void onBackPressed() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         if (isCounterRunning) {
-            builder.setTitle("Do tou want to exit?");
-            builder.setMessage("It is still counting.");
-            builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
+            builder.setTitle(R.string.progress_exit);
+            builder.setMessage(R.string.progress_still_counting);
+            builder.setPositiveButton(R.string.progress_exit_no, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     builder.create();
                 }
             });
-            builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(R.string.progress_exit_yes, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
 
                     // Cancel the counter
@@ -289,14 +289,14 @@ public class ProgressActivity extends AppCompatActivity {
             builder.show();
         } else if (Integer.parseInt(setsTextView.getText().toString()) < Integer.parseInt(mSets)) {
             int remain = Integer.parseInt(mSets) - Integer.parseInt(setsTextView.getText().toString());
-            builder.setTitle("Do tou want to exit?");
-            builder.setMessage("You just finished " + remain + " sets......");
-            builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
+            builder.setTitle(R.string.progress_exit);
+            builder.setMessage(getString(R.string.progress_you_just_finish) + remain + getString(R.string.progress_remain_sets));
+            builder.setPositiveButton(R.string.progress_exit_no, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     builder.create();
                 }
             });
-            builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(R.string.progress_exit_yes, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
 
                     // Cancel the counter

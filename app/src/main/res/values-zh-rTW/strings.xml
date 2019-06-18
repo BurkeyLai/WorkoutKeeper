@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WorkoutKeeper</string>
+    <string name="title_rmCounter">最大肌力計算器</string>
+    <string name="title_anatomical">肌群圖</string>
+    <string name="title_activity_training">訓練菜單</string>
+    <string name="training_text">TrainingView</string>
+
+    <string name="RM">最大肌力計算器</string>
+    <string name="RM_100">100% (最大肌力)</string>
+    <string name="RM_95">95% (增加力氣)</string>
+    <string name="RM_90">90% (增加力量＝力氣x速度)</string>
+    <string name="RM_80">80% (增加肌肉量)</string>
+    <string name="RM_70">70% (增加肌耐力)</string>
+    <string name="RM_50">50% (增加爆發力)</string>
+    <string name="RM_weight">            負重            </string>
+    <string name="RM_repetition_times">重複次數</string>
+    <string name="title_rm">最大肌力</string>
+    <string name="title_calculator">計算器</string>
+
+    <string-array name="chest_recipe_titles">
+        <item>槓鈴胸推</item>
+        <item>啞鈴胸推</item>
+        <item>夾胸</item>
+        <item>上斜槓鈴胸推</item>
+        <item>上斜啞鈴胸推</item>
+        <item>上斜夾胸</item>
+        <item>下斜槓鈴胸推</item>
+        <item>下斜啞鈴胸推</item>
+        <item>下斜夾胸</item>
+        <item>伏地挺身</item>
+    </string-array>
+
+    <string-array name="chest_recipe_info">
+        <item>使用槓鈴訓練胸肌</item>
+        <item>使用啞鈴訓練胸肌</item>
+        <item>使用滑輪或器械訓練胸肌</item>
+        <item>使用槓鈴訓練上胸</item>
+        <item>使用啞鈴訓練上胸</item>
+        <item>使用滑輪或器械訓練上胸</item>
+        <item>使用槓鈴訓練下胸</item>
+        <item>使用啞鈴訓練下胸</item>
+        <item>使用滑輪或器械訓練下胸</item>
+        <item>身體朝下用手撐起身體訓練胸肌</item>
+    </string-array>
+
+    <string-array name="chest_recipe_youtube">
+        <item>使用槓鈴訓練胸肌</item>
+        <item>使用啞鈴訓練胸肌</item>
+        <item>使用滑輪或器械訓練胸肌</item>
+        <item>使用槓鈴訓練上胸</item>
+        <item>使用啞鈴訓練上胸</item>
+        <item>使用滑輪或器械訓練上胸</item>
+        <item>使用槓鈴訓練下胸</item>
+        <item>使用啞鈴訓練下胸</item>
+        <item>使用滑輪或器械訓練下胸</item>
+        <item>身體朝下用手撐起身體訓練胸肌</item>
+    </string-array>
+
+
+    <string-array name="shoulder_recipe_titles">
+        <item>肩推</item>
+        <item>前平舉</item>
+        <item>側平舉</item>
+        <item>滑輪側平舉</item>
+        <item>啞鈴反向飛鳥</item>
+        <item>器械反向飛鳥</item>
+        <item>倒立俯卧撑</item>
+    </string-array>
+
+    <string-array name="shoulder_recipe_info">
+        <item>推槓鈴或啞鈴訓練前三角肌</item>
+        <item>推啞鈴訓練前三角肌</item>
+        <item>推啞鈴訓練前三角肌</item>
+        <item>使用滑輪訓練側三角肌</item>
+        <item>身體向前傾使用啞鈴訓練後三角肌</item>
+        <item>使用滑輪或器械訓練後三角肌</item>
+        <item>倒立撐起身體訓練肩部肌肉</item>
+    </string-array>
+
+    <string-array name="back_recipe_titles">
+        <item>窄握引體向上</item>
+        <item>寬握引體向上</item>
+        <item>上背下拉</item>
+        <item>坐姿划船</item>
+        <item>俯身划船</item>
+        <item>T型平舉</item>
+        <item>單臂啞鈴划船</item>
+        <item>背部伸展</item>
+    </string-array>
+
+    <string-array name="back_recipe_info">
+        <item>窄握並引體向上</item>
+        <item>寬握並引體向上</item>
+        <item>使用含背闊肌杆的器械下拉</item>
+        <item>坐著將機桿拉向身體</item>
+        <item>前傾將啞鈴拉向腹部</item>
+        <item>前傾手臂保持伸直狀態將重物平舉</item>
+        <item>單手持取啞鈴將膝蓋彎曲放在凳子上後將重物拉向胸部</item>
+        <item>保持上背伸直並彎腰拾取啞鈴後挺直腰部</item>
+    </string-array>
+
+    <string-array name="abs_recipe_titles">
+        <item>棒式撐體</item>
+        <item>死蟲式</item>
+        <item>抱腿仰臥起坐</item>
+        <item>啞鈴左右屈體</item>
+        <item>交互蜷腹</item>
+        <item>下斜蜷腹</item>
+    </string-array>
+
+    <string-array name="abs_recipe_info">
+        <item>身體朝下使用前臂撐起身體</item>
+        <item>雙手伸直舉過肩躺平地上將一隻腳的膝蓋前身並用不同側的手碰觸膝蓋</item>
+        <item>躺平後起身將手環抱膝蓋呈彎曲姿勢</item>
+        <item>一手握住啞鈴將身體向沒握重物的方向彎曲</item>
+        <item>拾取槓鈴片並彎曲腹部向左方彎曲後再向右方彎曲並重複動作</item>
+        <item>躺在下斜臥推椅彎曲腹部使手軸碰觸到膝蓋</item>
+    </string-array>
+
+    <string-array name="leg_recipe_titles">
+        <item>深蹲</item>
+        <item>無器械深蹲</item>
+        <item>硬舉</item>
+        <item>提膝弓箭步</item>
+        <item>深蹲跳</item>
+        <item>側弓步</item>
+        <item>單腿舉踵</item>
+        <item>腿推舉</item>
+        <item>腿伸屈</item>
+        <item>俯臥腿彎舉</item>
+        <item>大腿內收</item>
+        <item>大腿外展</item>
+    </string-array>
+
+    <string-array name="leg_recipe_info">
+        <item>將槓鈴放在斜方肌緩慢下蹲並保持背部伸直</item>
+        <item>雙腳與肩同寬站立後下蹲並保持背部伸直</item>
+        <item>保持背部伸直身體向前傾舉起槓鈴</item>
+        <item>雙腳與肩同寬站立後一隻腳往後彎曲膝蓋著地大腿小腿成90度，再向前抬起腿至腰部，之後另一隻腳重複動作</item>
+        <item>雙腳站立比臀部稍寬緩慢蹲下後做出跳躍動作</item>
+        <item>雙腳站立比臀部稍寬右腳跨出一大步將右膝彎曲並伸直左腳，之後另一隻腳重複步驟</item>
+        <item>雙腳站立比臀部稍寬舉起左膝與臀部同高並維持三秒右腳重複步驟</item>
+        <item>用腿推動器械</item>
+        <item>用腿舉起器械</item>
+        <item>使用股二頭肌的力量舉起器械</item>
+        <item>訓練內收肌</item>
+        <item>訓練外展肌</item>
+    </string-array>
+
+    <string-array name="arm_recipe_titles">
+        <item>二頭肌蜷曲</item>
+        <item>啞鈴俯身划船</item>
+        <item>上斜二頭肌彎曲</item>
+        <item>臂後舉</item>
+        <item>臂屈伸</item>
+    </string-array>
+
+    <string-array name="arm_recipe_info">
+        <item>雙手各拿一個啞鈴彎曲手臂訓練二頭肌</item>
+        <item>身體向前傾彎曲手臂訓練二頭肌</item>
+        <item>躺在上斜椅上彎曲手臂訓練二頭肌</item>
+        <item>雙手各拿一個啞鈴手臂彎曲至後方</item>
+        <item>彎曲手臂訓練二頭肌</item>
+    </string-array>
+
+    <string-array name="predefine_menu_titles">
+        <item>練胸日</item>
+        <item>練背日</item>
+        <item>練腿日</item>
+        <item>練肩膀日</item>
+        <item>練手臂日</item>
+        <item>練腹肌日</item>
+    </string-array>
+
+    <string-array name="sets_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="reps_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+    </string-array>
+
+    <string-array name="weights_array">
+        <item>公斤</item>
+        <item>磅</item>
+    </string-array>
+
+    <string-array name="rest_array">
+        <item>10 s</item>
+        <item>20 s</item>
+        <item>30 s</item>
+        <item>40 s</item>
+        <item>50 s</item>
+        <item>60 s</item>
+        <item>70 s</item>
+        <item>80 s</item>
+        <item>90 s</item>
+        <item>100 s</item>
+        <item>110 s</item>
+        <item>120 s</item>
+        <item>180 s</item>
+        <item>240 s</item>
+        <item>300 s</item>
+    </string-array>
+    <string name="title_activity_daily_schedule">DailyScheduleActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_video_player">VideoPLayer</string>
+    <string name="title_activity_timer">TimerActivity</string>
+
+    <string name="enter_your_action">輸入自訂動作:</string>
+    <string name="edit_action">動作名稱</string>
+    <string name="enter_description">輸入自訂描述:</string>
+    <string name="edit_description">動作描述</string>
+    <string name="add_training_button">加入動作</string>
+    <string name="straight_begin">直接開始</string>
+    <string name="one_day_schedule">每日計畫</string>
+    <string name="weekly_schedule">每週計畫</string>
+    <string name="tab_schedule">計畫項目</string>
+    <string name="tab_recommended">推薦菜單</string>
+    <string name="dialog_muscle_title">解剖圖</string>
+    <string name="dialog_muscle_ok">確定</string>
+    <string name="dialog_muscle_toast">肌肉解剖圖</string>
+    <string name="rm_dialog_weight_is_empty">負重欄位是空的</string>
+    <string name="rm_dialog_rep_is_empty">次數欄位是空的</string>
+    <string name="rm_dialog_weight_must_bigger_than_zero">負重必須大於0</string>
+    <string name="rm_dialog_rep_times">次數必須介於1到12</string>
+    <string name="confirm_show_me">顯示結果</string>
+    <string name="toolbar_fitness">健身</string>
+    <string name="timer_pause">暫停</string>
+    <string name="timer_start">開始</string>
+    <string name="timer_please_enter">請至少輸入一欄</string>
+    <string name="timer_seconds_range">秒數必須介於0到60</string>
+    <string name="toolbar_timer">倒計時器</string>
+    <string name="addtimer_minutes">分鐘</string>
+    <string name="addtimer_seconds">秒</string>
+    <string name="addtimer_set">設定</string>
+    <string name="timer_reset">重設</string>
+    <string name="toolbar_bodypart">部位</string>
+    <string name="bodypart_chest">胸</string>
+    <string name="bodypart_shoulder">肩</string>
+    <string name="bodypart_back">背</string>
+    <string name="bodypart_abs">腹</string>
+    <string name="bodypart_leg">腿</string>
+    <string name="bodypart_arm">臂</string>
+    <string name="training_reset">重設自訂項目</string>
+    <string name="schedule_list_hint">計畫項目</string>
+    <string name="schedule_list_done">完成訓練</string>
+    <string name="back_pressed_title">想退出?</string>
+    <string name="back_pressed_message">你的計畫項目會不見喔！</string>
+    <string name="back_pressed_no">留下</string>
+    <string name="back_pressed_yes">堅決退出</string>
+    <string name="workout_done_title">訓練結束?</string>
+    <string name="workout_done_message">偷懶三小！</string>
+    <string name="workout_done_no">繼續訓練</string>
+    <string name="workout_done_yes">做完了喇</string>
+    <string name="reset_title">重設自訂項目?</string>
+    <string name="reset_message">自訂項目將被刪除！</string>
+    <string name="reset_no">取消</string>
+    <string name="reset_yes">是</string>
+    <string name="toolbar_add_your_own_training">增加自訂項目</string>
+    <string name="setting_confirm">確認 !</string>
+    <string name="setting_go">開始 !</string>
+    <string name="setting_demo_video">參考影片</string>
+    <string name="setting_rest_time">組間休息</string>
+    <string name="setting_reps">次數</string>
+    <string name="setting_sets">組數</string>
+    <string name="setting_weights">重量</string>
+    <string name="progress_sets">剩餘組數:</string>
+    <string name="progress_reps">次數:</string>
+    <string name="progress_take_a_breath">休息一下</string>
+    <string name="progress_pause">暫停</string>
+    <string name="progress_reset">重設</string>
+    <string name="progress_resume">繼續</string>
+    <string name="toolbar_progress">進度</string>
+    <string name="progress_great_job">幹得好! 繼續幹!</string>
+    <string name="progress_timeup">時間到!</string>
+    <string name="progress_move">他媽動起來!</string>
+    <string name="progress_exit">想離開?</string>
+    <string name="progress_still_counting">還在倒數ㄟ</string>
+    <string name="progress_exit_no">不了</string>
+    <string name="progress_exit_yes">堅決離開</string>
+    <string name="progress_you_just_finish">你才完成</string>
+    <string name="progress_remain_sets">組......</string>
+
+</resources>

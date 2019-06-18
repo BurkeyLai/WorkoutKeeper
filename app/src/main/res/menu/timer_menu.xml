@@ -5,6 +5,6 @@
         android:id="@+id/Timer_icon"
         android:icon="@drawable/ic_timer"
         android:orderInCategory="100"
-        android:title="Timer"
+        android:title="@string/toolbar_timer"
         app:showAsAction="always" />
 </menu>

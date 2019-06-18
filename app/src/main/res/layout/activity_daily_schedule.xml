@@ -20,7 +20,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/recycleview_background1"
-            android:layout_weight="1">
+            android:layout_weight="1.5">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:visibility="gone"
-                    android:text="Schedule List"
+                    android:text="@string/schedule_list_hint"
                     android:textSize="50sp"
                     android:textColor="#DDDDDD"
                     android:textStyle="italic"/>
@@ -55,7 +55,7 @@
                 android:layout_marginBottom="4dp"
                 android:background="@drawable/button_background5"
                 android:visibility="gone"
-                android:text="Done"
+                android:text="@string/schedule_list_done"
                 android:textColor="#FFFFFF"
                 android:onClick="workoutDone"/>
 

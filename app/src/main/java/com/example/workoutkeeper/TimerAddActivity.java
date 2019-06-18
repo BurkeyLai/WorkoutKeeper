@@ -27,7 +27,7 @@ public class TimerAddActivity extends AppCompatActivity {
 
         if (Minute.getText().toString().isEmpty() && Second.getText().toString().isEmpty()) {
 
-            displayToast("Please enter at least one number");
+            displayToast(getString(R.string.timer_please_enter));
         }
 
         else{
@@ -45,7 +45,7 @@ public class TimerAddActivity extends AppCompatActivity {
             }
             if (S > 60){
                 Second.setText("60");
-                displayToast("Seconds must between 0 and 60");
+                displayToast(getString(R.string.timer_seconds_range));
             }
             else{
                 Intent intent = new Intent();

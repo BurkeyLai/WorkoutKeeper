@@ -18,7 +18,7 @@
         </activity>
         <activity
             android:name=".TimerActivity"
-            android:label="Timer"
+            android:label="@string/toolbar_timer"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RMShowActivity"
@@ -28,7 +28,7 @@
             android:theme="@style/activity_styles" />
         <activity
             android:name=".AddTrainingActivity"
-            android:label="Add Your Own Training" />
+            android:label="@string/toolbar_add_your_own_training" />
         <activity
             android:name=".VideoPLayer"
             android:label="@string/title_activity_video_player"
@@ -39,7 +39,7 @@
         <activity
             android:name=".ProgressActivity"
             android:configChanges="orientation|screenSize"
-            android:label="Progress">
+            android:label="@string/toolbar_progress">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
@@ -69,10 +69,10 @@
         </activity>
         <activity
             android:name=".ChooseBodyPartActivity"
-            android:label="Body Part" />
+            android:label="@string/toolbar_bodypart" />
         <activity
             android:name=".FitnessActivity"
-            android:label="Fitness" />
+            android:label="@string/toolbar_fitness" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

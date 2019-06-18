@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RM"
+            android:text="@string/title_rm"
             android:background="@android:color/black"
             android:textColor="@android:color/white"
             android:gravity="center"

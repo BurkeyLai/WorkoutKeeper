@@ -28,16 +28,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:text="RM"
+                android:text="@string/title_rm"
                 android:textSize="36sp" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_weight="1"
-                android:text="calculator"
+                android:text="@string/title_calculator"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -67,7 +66,6 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-
                 android:text="" />
 
         </LinearLayout>
@@ -99,8 +97,6 @@
                 android:inputType="number"
                 android:text="" />
 
-
-
         </LinearLayout>
 
 
@@ -117,14 +113,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="RM"
-                android:text="SHOW ME"
+                android:text="@string/confirm_show_me"
                 android:background="@android:color/black"
                 android:textColor="@android:color/white"
                 />
 
-
-
-            "/>
 
         </LinearLayout>
     </LinearLayout>

@@ -29,6 +29,8 @@ public class DailyScheduleActivity extends FragmentActivity {
     private ArrayList<ScheduleListItem> mDailyData = new ArrayList<>();
     public static final int TEXT_REQUEST = 1;
     private String mAction, mWeights, mUnit, mSets, mReps, mTime;
+    private String mPreDefine, mFromRecommended = "no";
+    private Integer mPreDefinePos;
     private Button mDoneButton;
 
     @Override
@@ -40,16 +42,22 @@ public class DailyScheduleActivity extends FragmentActivity {
             mDailyData = savedInstanceState.getParcelableArrayList("daily_data_list");
         }
 
+        Bundle bundle = this.getIntent().getExtras();
+        if(bundle != null) {
+            mPreDefinePos = Integer.parseInt(bundle.getString("Pos_Key"));
+            mPreDefine = bundle.getString("Title_Key");
+            mFromRecommended = bundle.getString("From_Key");
+        }
+
         mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
         mTabHost.setup(this, getSupportFragmentManager(), R.id.container);
-        //TextView tabText = (TextView) findViewById(android.R.id.tabcontent);
 
-        addNewTab("Chest", R.drawable.ic_chest);
-        addNewTab("Shoulder", R.drawable.ic_shoulder);
-        addNewTab("Back", R.drawable.ic_back);
-        addNewTab("ABS", R.drawable.ic_abs);
-        addNewTab("Leg", R.drawable.ic_leg);
-        addNewTab("Arm", R.drawable.ic_arm);
+        addNewTab("chest", R.drawable.ic_chest);
+        addNewTab("shoulder", R.drawable.ic_shoulder);
+        addNewTab("back", R.drawable.ic_back);
+        addNewTab("abs", R.drawable.ic_abs);
+        addNewTab("leg", R.drawable.ic_leg);
+        addNewTab("arm", R.drawable.ic_arm);
 
         int gridColumnCount = 1;
         mDailyRecyclerView = findViewById(R.id.daily_recyclerView);
@@ -58,6 +66,14 @@ public class DailyScheduleActivity extends FragmentActivity {
         mDailyRecyclerView.setLayoutManager(new GridLayoutManager(this, gridColumnCount));
         mDailyAdapter = new ScheduleListAdapter(this, mDailyData);
         mDailyRecyclerView.setAdapter(mDailyAdapter);
+
+        // If we need to set recommended recipe...
+        if (mFromRecommended.equals("yes")) {
+            mDailyRecyclerView.setVisibility(View.VISIBLE);
+            mHintText.setVisibility(View.GONE);
+            mDoneButton.setVisibility(View.VISIBLE);
+            setRecommendedRecipe(mPreDefinePos, mPreDefine);
+        }
 
         int swipeDirs;
         if(gridColumnCount > 1){
@@ -125,6 +141,10 @@ public class DailyScheduleActivity extends FragmentActivity {
             mDailyRecyclerView.setVisibility(View.GONE);
             mHintText.setVisibility(View.VISIBLE);
             mDoneButton.setVisibility(View.GONE);
+        } else {
+            mDailyRecyclerView.setVisibility(View.VISIBLE);
+            mHintText.setVisibility(View.GONE);
+            mDoneButton.setVisibility(View.VISIBLE);
         }
 
     }
@@ -185,15 +205,15 @@ public class DailyScheduleActivity extends FragmentActivity {
     @Override
     public void onBackPressed() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        if (mDailyData.size() != 0) {
-            builder.setTitle("Do tou want to exit?");
-            builder.setMessage("You will lost your scheduled list.");
-            builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
+        if (mDailyData.size() != 0 && !mFromRecommended.equals("yes")) {
+            builder.setTitle(R.string.back_pressed_title);
+            builder.setMessage(R.string.back_pressed_message);
+            builder.setPositiveButton(R.string.back_pressed_no, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     builder.create();
                 }
             });
-            builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(R.string.back_pressed_yes, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     DailyScheduleActivity.super.onBackPressed();
                 }
@@ -208,14 +228,14 @@ public class DailyScheduleActivity extends FragmentActivity {
         if (mDailyData.size() != 0) {
             final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-            builder.setTitle("Workout done?");
-            builder.setMessage("You will lost your scheduled list.");
-            builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
+            builder.setTitle(R.string.workout_done_title);
+            builder.setMessage(R.string.workout_done_message);
+            builder.setPositiveButton(R.string.workout_done_no, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     builder.create();
                 }
             });
-            builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(R.string.workout_done_yes, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     // **********
                     // Save data
@@ -225,6 +245,57 @@ public class DailyScheduleActivity extends FragmentActivity {
             });
             builder.show();
         }
+    }
+
+    public void setRecommendedRecipe(int pos, String title){
+        String[] programTitleList = getResources().getStringArray(R.array.predefine_menu_titles);
+        String[] recipeList1 = getResources().getStringArray(R.array.chest_recipe_titles);
+        String[] recipeList2 = getResources().getStringArray(R.array.back_recipe_titles);
+        String[] recipeList3 = getResources().getStringArray(R.array.leg_recipe_titles);
+        String[] recipeList4 = getResources().getStringArray(R.array.shoulder_recipe_titles);
+        String[] recipeList5 = getResources().getStringArray(R.array.arm_recipe_titles);
+        String[] recipeList6 = getResources().getStringArray(R.array.abs_recipe_titles);
+        if (title.equals(programTitleList[0])) {
+            mDailyData.add(new ScheduleListItem(recipeList1[0], ITS(20), "KG", ITS(6), ITS(8), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList1[1], ITS(10), "KG", ITS(4), ITS(8), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList1[4], ITS(8), "KG", ITS(4), ITS(8), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList1[2], ITS(10), "KG", ITS(4), ITS(8), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList5[4], ITS(8), "KG", ITS(6), ITS(10), "60 s"));
+        } else if (title.equals(programTitleList[1])) {
+            mDailyData.add(new ScheduleListItem(recipeList2[0], "", "", ITS(6), ITS(6), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList2[2], ITS(20), "KG", ITS(4), ITS(8), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList2[3], ITS(20), "KG", ITS(4), ITS(8), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList2[7], ITS(20), "KG", ITS(4), ITS(10), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList5[0], ITS(4), "KG", ITS(6), ITS(10), "60 s"));
+        } else if (title.equals(programTitleList[2])) {
+            mDailyData.add(new ScheduleListItem(recipeList3[0], ITS(30), "KG", ITS(6), ITS(8), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList3[2], ITS(20), "KG", ITS(4), ITS(8), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList3[3], "", "", ITS(4), ITS(8), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList3[7], ITS(20), "KG", ITS(4), ITS(10), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList3[9], ITS(15), "KG", ITS(4), ITS(8), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList3[10], ITS(15), "KG", ITS(6), ITS(10), "40 s"));
+            mDailyData.add(new ScheduleListItem(recipeList3[11], ITS(15), "KG", ITS(6), ITS(10), "40 s"));
+        } else if (title.equals(programTitleList[3])) {
+            mDailyData.add(new ScheduleListItem(recipeList4[0], ITS(8), "KG", ITS(6), ITS(6), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList4[2], ITS(4), "KG", ITS(4), ITS(8), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList4[3], ITS(5), "KG", ITS(6), ITS(6), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList4[5], ITS(10), "KG", ITS(4), ITS(10), "60 s"));
+        } else if (title.equals(programTitleList[4])) {
+            mDailyData.add(new ScheduleListItem(recipeList5[0], ITS(6), "KG", ITS(6), ITS(10), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList5[2], ITS(4), "KG", ITS(4), ITS(6), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList5[3], ITS(6), "KG", ITS(6), ITS(6), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList5[4], ITS(6), "KG", ITS(4), ITS(10), "60 s"));
+        } else if (title.equals(programTitleList[5])) {
+            mDailyData.add(new ScheduleListItem(recipeList6[1], "", "", ITS(4), ITS(20), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList6[3], ITS(8), "KG", ITS(4), ITS(20), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList6[4], ITS(5), "KG", ITS(4), ITS(20), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList6[5], "", "", ITS(4), ITS(10), "90 s"));
+        }
+
+    }
+
+    public String ITS(int n) {
+        return Integer.toString(n);
     }
 }
 
