@@ -411,6 +411,7 @@ public class BodyPartFragment extends Fragment {
             mRecipeDescription.addLast(recipeInfo[i]);
             mYoutubeList.addLast(recipeYoutube[i]);
         }
+
         mShoulderTitle = mRecipe;
         mShoulderDes = mRecipeDescription;
         mShoulderYT = mYoutubeList;
@@ -426,6 +427,7 @@ public class BodyPartFragment extends Fragment {
             mRecipeDescription.addLast(recipeInfo[i]);
             mYoutubeList.addLast(recipeYoutube[i]);
         }
+
         mBackTitle = mRecipe;
         mBackDes = mRecipeDescription;
         mBackYT = mYoutubeList;
@@ -441,6 +443,7 @@ public class BodyPartFragment extends Fragment {
             mRecipeDescription.addLast(recipeInfo[i]);
             mYoutubeList.addLast(recipeYoutube[i]);
         }
+
         mABSTitle = mRecipe;
         mABSDes = mRecipeDescription;
         mABSYT = mYoutubeList;
@@ -456,6 +459,7 @@ public class BodyPartFragment extends Fragment {
             mRecipeDescription.addLast(recipeInfo[i]);
             mYoutubeList.addLast(recipeYoutube[i]);
         }
+
         mLegTitle = mRecipe;
         mLegDes = mRecipeDescription;
         mLegYT = mYoutubeList;

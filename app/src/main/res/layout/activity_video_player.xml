@@ -7,8 +7,6 @@
     tools:context=".VideoPLayer">
 
 
-
-
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/YTView"
         android:layout_width="match_parent"

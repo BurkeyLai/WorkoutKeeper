@@ -29,7 +29,6 @@ public class TrainingListAdapter extends
                            LinkedList<String> wordList,
                            LinkedList<String> descriptionList,
                                LinkedList<String> youtubeList ) {
-
         mInflater = LayoutInflater.from(context);
         schedule = n;
         this.mWordList = wordList;

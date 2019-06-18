@@ -14,6 +14,8 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
+import static com.google.android.youtube.player.YouTubePlayer.FULLSCREEN_FLAG_ALWAYS_FULLSCREEN_IN_LANDSCAPE;
+
 public class VideoPLayer extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
     YouTubePlayerView mYTView;
@@ -33,11 +35,15 @@ public class VideoPLayer extends YouTubeBaseActivity implements YouTubePlayer.On
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
         Intent intent = getIntent();
         id =  intent.getStringExtra("youtube_KEY");
+
         //Log.d("youtube_KEY", id);
         //youTubePlayer.setFullscreen(true);
         if (id.equals("No Video")) {
             finish();
         }
+
+        //youTubePlayer.setFullscreen(true);
+
         if(!b){
             //youTubePlayer.cueVideo(id);
             //youTubePlayer.play();

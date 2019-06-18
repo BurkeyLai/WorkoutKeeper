@@ -84,6 +84,7 @@ public class TrainingActivity extends AppCompatActivity {
         mPreferences = getSharedPreferences(sharedPrefFile, MODE_PRIVATE);
         //Sets RecyclerView and Adapter
         mRecyclerView = findViewById(R.id.recyclerview);
+
         mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription, mRecipeYoutube);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -348,9 +349,11 @@ public class TrainingActivity extends AppCompatActivity {
             mRecipeYoutube.addLast(recipeYoutube[i]);
         }
 
+
         mChestTitle = mRecipe;
         mChestDes = mRecipeDescription;
         mChestYT = mRecipeYoutube;
+
     }
 
     private void initializeShoulderData(){
@@ -379,6 +382,7 @@ public class TrainingActivity extends AppCompatActivity {
             mRecipeDescription.addLast(recipeInfo[i]);
             mRecipeYoutube.addLast(recipeYoutube[i]);
         }
+
         mBackTitle = mRecipe;
         mBackDes = mRecipeDescription;
         mBackYT = mRecipeYoutube;
@@ -388,7 +392,6 @@ public class TrainingActivity extends AppCompatActivity {
         String[] recipeList = getResources().getStringArray(R.array.abs_recipe_titles);
         String[] recipeInfo = getResources().getStringArray(R.array.abs_recipe_info);
         String[] recipeYoutube = getResources().getStringArray(R.array.abs_recipe_youtube);
-
         for (int i = 0; i < recipeList.length; i++) {
             mRecipe.addLast(recipeList[i]);
             mRecipeDescription.addLast(recipeInfo[i]);
@@ -409,6 +412,7 @@ public class TrainingActivity extends AppCompatActivity {
             mRecipeDescription.addLast(recipeInfo[i]);
             mRecipeYoutube.addLast(recipeYoutube[i]);
         }
+
         mLegTitle = mRecipe;
         mLegDes = mRecipeDescription;
         mLegYT = mRecipeYoutube;
@@ -424,10 +428,12 @@ public class TrainingActivity extends AppCompatActivity {
             mRecipeDescription.addLast(recipeInfo[i]);
             mRecipeYoutube.addLast(recipeYoutube[i]);
         }
+
         mArmTitle = mRecipe;
         mArmDes = mRecipeDescription;
         mArmYT = mRecipeYoutube;
     }
+
 
     @Override
     public void onActivityResult(int requestCode,

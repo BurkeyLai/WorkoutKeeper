@@ -55,6 +55,7 @@ public class SetsAndRepsActivity  extends AppCompatActivity implements
         });
 
 
+
         if (mScheduleID == 1) {
             mNextButton.setText(R.string.setting_confirm);
         }
