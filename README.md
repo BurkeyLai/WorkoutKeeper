@@ -1,10 +1,10 @@
 # WorkoutKeeper
 
-An app to teach you how to work and schedule your weekly list
+An app to teach you about fitness and schedule your training list.
 
 ## Installing
 
-The apk file is under /WorkoutKeeper/app/debug/app-debug.apk
+The apk file is under /WorkoutKeeper/app/debug/app-debug.apk.
 
 ## Built With
 
