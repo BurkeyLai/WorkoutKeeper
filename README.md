@@ -21,7 +21,8 @@ The apk file is under /WorkoutKeeper/app/debug/app-debug.apk.
 * If you getting start straightly, you get to next page to choose the main body part you want to workout.
 * Choose any one you want and you can see a lot of training programs. If those cannot satisfy you, you can define your own training program.
 * Select what you want, and enter the weight, number of sets and repetitions, and the rest time between sets.
- * If you have no idea about this training program, there is youtube video for referring.
+* If you have no idea about this training program, there is youtube video for referring.
+* Confirm and go to next page for recording your program. Whenever you finish a set, click "Take a breathe" for app to notify you about the rest time, until you finish all sets. 
 
 
 ## Authors and Contribution
