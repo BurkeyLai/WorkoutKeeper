@@ -29,6 +29,7 @@ The apk file is under /WorkoutKeeper/app/debug/app-debug.apk.
 <div align=center><img width="200" height="345" src="https://upload.cc/i1/2019/06/19/i9NK7n.png"/></div>
 
 * Choose any one you want and you can see a lot of **training programs**. If those cannot satisfy you, you can **define your own training program**.
+<div align=center><img width="200" height="345" src="https://upload.cc/i1/2019/06/19/wjEgR5.png"/></div>
 
 * Select what you want, and enter the weight, number of sets and repetitions, and the rest time between sets.
 <div align=center><img width="420" height="345" src="https://upload.cc/i1/2019/06/19/2cGPYT.png"/></div>
