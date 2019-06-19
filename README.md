@@ -18,7 +18,8 @@ The apk file is under /WorkoutKeeper/app/debug/app-debug.apk.
 * As you choose fitness, you are going to have a simple fitness keeper.
 
 * First of all, you can select kinds of schedules you want to use, or swipe to right for some **recommended training recipes**.
-![](https://upload.cc/i1/2019/06/19/iMXn3W.png)![](https://upload.cc/i1/2019/06/19/g1FiJY.png)
+
+![](https://upload.cc/i1/2019/06/19/S8gviE.png)
 
 
 * At the toolbar, you can see two icons. 
