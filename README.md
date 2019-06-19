@@ -6,9 +6,19 @@ An app to teach you about fitness and schedule your training list.
 
 The apk file is under /WorkoutKeeper/app/debug/app-debug.apk.
 
-## Built With
+## Built With && Techniques
 
 * [YouTube Android Player API](https://developers.google.com/youtube/android/player/downloads/) - For the YouTube Android Player API
+* **SharedPreferences**
+* **RecyclerView**
+* **CardView**
+* **FAB**
+* **Dialog**
+* **TabLayout**
+* **ViewPager**
+* **FragmentStatePagerAdapter**
+* **CountDownTimer**
+* **ProgressBar**
 
 ## Usage
 
