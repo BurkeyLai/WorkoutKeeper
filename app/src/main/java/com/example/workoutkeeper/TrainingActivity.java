@@ -448,7 +448,7 @@ public class TrainingActivity extends AppCompatActivity {
                 mRecipe.addLast(RecipeTitle);
                 mRecipeDescription.addLast(RecipeInfo);
                 mRecipeYoutube.addLast("No Video");
-                mAdapter.notifyDataSetChanged();
+                mAdapter.notifyDataSetChanged();// Apply changes to adapter!!!
                 //Log.d("fuckkkkkkk", Integer.toString(chest_state));
             }
         }

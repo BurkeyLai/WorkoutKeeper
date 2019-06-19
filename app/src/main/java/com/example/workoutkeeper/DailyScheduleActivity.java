@@ -69,6 +69,7 @@ public class DailyScheduleActivity extends FragmentActivity {
 
         // If we need to set recommended recipe...
         if (mFromRecommended.equals("yes")) {
+            mDailyData.clear();
             mDailyRecyclerView.setVisibility(View.VISIBLE);
             mHintText.setVisibility(View.GONE);
             mDoneButton.setVisibility(View.VISIBLE);

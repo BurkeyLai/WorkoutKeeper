@@ -492,7 +492,7 @@ public class BodyPartFragment extends Fragment {
                 mRecipe.addLast(RecipeTitle);
                 mRecipeDescription.addLast(RecipeInfo);
                 mYoutubeList.addLast("No Video");
-                mAdapter.notifyDataSetChanged();
+                mAdapter.notifyDataSetChanged();// Apply changes to adapter!!!
             }
         }
     }
