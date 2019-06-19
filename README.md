@@ -13,6 +13,7 @@ The apk file is under /WorkoutKeeper/app/debug/app-debug.apk.
 ## Usage
 
 * At Home, you can choose a **countdown counter** at the toolbar, which can let you mange multiple counters simultaneously.
+[img]https://upload.cc/i1/2019/06/19/cdIECA.png[/img]
 
 * As you choose fitness, you are going to have a simple fitness keeper.
 
