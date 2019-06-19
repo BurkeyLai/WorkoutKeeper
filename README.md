@@ -13,13 +13,12 @@ The apk file is under /WorkoutKeeper/app/debug/app-debug.apk.
 ## Usage
 
 * At Home, you can choose a **countdown counter** at the toolbar, which can let you mange multiple counters simultaneously.
-<div align=center><img width="150" height="300" src="https://upload.cc/i1/2019/06/19/cdIECA.png"/></div>
+<div align=center><img width="200" height="345" src="https://upload.cc/i1/2019/06/19/cdIECA.png"/></div>
 
 * As you choose fitness, you are going to have a simple fitness keeper.
 
 * First of all, you can select kinds of schedules you want to use, or swipe to right for some **recommended training recipes**.
-
-![](https://upload.cc/i1/2019/06/19/S8gviE.png)
+<div align=center><img width="400" height="345" src="https://upload.cc/i1/2019/06/19/S8gviE.png"/></div>
 * At the toolbar, you can see two icons. 
   * The left one show you the **muscle anatomy** about human, which teach you to know more about body part.
   * The right one let you count your own **repetition maximum** which make you acknowledge your limit.
