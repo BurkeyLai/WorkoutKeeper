@@ -45,7 +45,7 @@ The apk file is under /WorkoutKeeper/app/debug/app-debug.apk.
 <div align=center><img width="420" height="345" src="https://upload.cc/i1/2019/06/19/2cGPYT.png"/></div>
 
 * If you have no idea about this training program, there is **youtube video** for referring.
-<div align=center><img width="500" height="345" src="https://upload.cc/i1/2019/06/19/bv3AeX.png"/></div>
+<div align=center><img width="550" height="345" src="https://upload.cc/i1/2019/06/19/bv3AeX.png"/></div>
 
 * Confirm and go to next page for **recording** your program. Whenever you finish a set, click "Take a breathe" for app to **notify** you about the rest time, until you finish all sets. 
 <div align=center><img width="400" height="345" src="https://upload.cc/i1/2019/06/19/4DlcpH.png"/></div>
