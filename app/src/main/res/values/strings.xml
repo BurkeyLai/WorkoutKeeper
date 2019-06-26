@@ -370,5 +370,6 @@
     <string name="progress_exit_yes">Yes</string>
     <string name="progress_you_just_finish">You just finished</string>
     <string name="progress_remain_sets">sets......</string>
+    <string name="schedule_list_save">Save</string>
 
 </resources>

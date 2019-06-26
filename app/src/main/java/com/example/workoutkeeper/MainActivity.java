@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -33,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.basketball_button:
-                Intent intent2 = new Intent(this, Korean_fish.class);
+                Intent intent2 = new Intent(this, KoreanFish.class);
                 startActivity(intent2);
                 break;
             case R.id.jogging_button:

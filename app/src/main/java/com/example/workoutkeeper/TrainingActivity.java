@@ -84,7 +84,6 @@ public class TrainingActivity extends AppCompatActivity {
         mPreferences = getSharedPreferences(sharedPrefFile, MODE_PRIVATE);
         //Sets RecyclerView and Adapter
         mRecyclerView = findViewById(R.id.recyclerview);
-
         mAdapter = new TrainingListAdapter(this, 0, mRecipe, mRecipeDescription, mRecipeYoutube);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));

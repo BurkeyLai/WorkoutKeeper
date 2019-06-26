@@ -14,19 +14,20 @@
         android:layout_marginEnd="16dp"
         android:orientation="vertical">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/recycleview_background1"
-            android:layout_weight="1.5">
+            android:layout_weight="1.25">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_above="@id/done_button">
+                android:layout_weight="1">
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/daily_recyclerView"
@@ -46,20 +47,36 @@
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/done_button"
-                android:layout_width="120dp"
-                android:layout_height="30dp"
-                android:layout_centerInParent="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="4dp"
-                android:background="@drawable/button_background5"
-                android:visibility="gone"
-                android:text="@string/schedule_list_done"
-                android:textColor="#FFFFFF"
-                android:onClick="workoutDone"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_weight="5"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
 
-        </RelativeLayout>
+                <Button
+                    android:id="@+id/done_button"
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/button_background5"
+                    android:text="@string/schedule_list_done"
+                    android:textColor="#FFFFFF"
+                    android:onClick="workoutDone"/>
+                <Button
+                    android:id="@+id/save_button"
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/button_background5"
+                    android:text="@string/schedule_list_save"
+                    android:textColor="#FFFFFF"
+                    android:onClick="workoutSave"/>
+            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"

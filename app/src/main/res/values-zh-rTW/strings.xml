@@ -312,5 +312,6 @@
     <string name="progress_exit_yes">堅決離開</string>
     <string name="progress_you_just_finish">你才完成</string>
     <string name="progress_remain_sets">組......</string>
+    <string name="schedule_list_save">儲存</string>
 
 </resources>

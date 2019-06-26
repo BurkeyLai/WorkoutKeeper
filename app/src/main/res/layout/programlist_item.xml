@@ -14,8 +14,8 @@
         <ImageView
             android:id="@+id/program_icon"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
             android:layout_gravity="center"/>
 
         <TextView
@@ -28,6 +28,12 @@
             android:textStyle="bold"
             android:textColor="@color/colorShadow"
             android:gravity="center"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 

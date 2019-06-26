@@ -73,10 +73,12 @@ public class PreDefineMenuAdapter extends
 
     @Override
     public void onBindViewHolder(@NonNull PreDefineMenuAdapter.PreDefineMenuViewHolder holder, int position) {
+        if (position < mIconList.size()) {
+            Integer mCurrentIcon = mIconList.get(position);
+            holder.iconItemView.setImageResource(mCurrentIcon);
+        }
         String mCurrentTitle = mTitleList.get(position);
-        Integer mCurrentIcon = mIconList.get(position);
         holder.titleItemView.setText(mCurrentTitle);
-        holder.iconItemView.setImageResource(mCurrentIcon);
     }
 
     @Override

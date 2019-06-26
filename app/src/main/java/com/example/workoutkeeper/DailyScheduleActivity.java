@@ -3,6 +3,7 @@ package com.example.workoutkeeper;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.os.Bundle;
@@ -11,8 +12,10 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,20 +26,24 @@ import java.util.Collections;
 public class DailyScheduleActivity extends FragmentActivity {
 
     private FragmentTabHost mTabHost;
+
     private RecyclerView mDailyRecyclerView;
     private TextView mHintText;
     private ScheduleListAdapter mDailyAdapter;
     private ArrayList<ScheduleListItem> mDailyData = new ArrayList<>();
     public static final int TEXT_REQUEST = 1;
     private String mAction, mWeights, mUnit, mSets, mReps, mTime;
-    private String mPreDefine, mFromRecommended = "no";
-    private Integer mPreDefinePos;
-    private Button mDoneButton;
+    private String mPreDefine, mFromRecommended = "no", mCustomizedTitle;
+    private Integer mPreDefinePos, mNumberOfCustomizedRecipe = 20;
+    private Button mDoneButton, mSaveButton;
+    private SharedPreferences mPreferences;
+    private String sharedPrefFile = "CustomizedRecipeDataSet";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_schedule);
+
 
         if (savedInstanceState != null) {
             mDailyData = savedInstanceState.getParcelableArrayList("daily_data_list");
@@ -60,12 +67,16 @@ public class DailyScheduleActivity extends FragmentActivity {
         addNewTab("arm", R.drawable.ic_arm);
 
         int gridColumnCount = 1;
+
         mDailyRecyclerView = findViewById(R.id.daily_recyclerView);
         mHintText = findViewById(R.id.hint_text);
         mDoneButton = findViewById(R.id.done_button);
+        mSaveButton = findViewById(R.id.save_button);
         mDailyRecyclerView.setLayoutManager(new GridLayoutManager(this, gridColumnCount));
         mDailyAdapter = new ScheduleListAdapter(this, mDailyData);
         mDailyRecyclerView.setAdapter(mDailyAdapter);
+
+        mPreferences = getSharedPreferences(sharedPrefFile, MODE_PRIVATE);
 
         // If we need to set recommended recipe...
         if (mFromRecommended.equals("yes")) {
@@ -73,6 +84,7 @@ public class DailyScheduleActivity extends FragmentActivity {
             mDailyRecyclerView.setVisibility(View.VISIBLE);
             mHintText.setVisibility(View.GONE);
             mDoneButton.setVisibility(View.VISIBLE);
+            mSaveButton.setVisibility(View.VISIBLE);
             setRecommendedRecipe(mPreDefinePos, mPreDefine);
         }
 
@@ -128,6 +140,7 @@ public class DailyScheduleActivity extends FragmentActivity {
                     mDailyRecyclerView.setVisibility(View.GONE);
                     mHintText.setVisibility(View.VISIBLE);
                     mDoneButton.setVisibility(View.GONE);
+                    mSaveButton.setVisibility(View.GONE);
                 }
                 // Notify the adapter.
                 mDailyAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
@@ -142,10 +155,12 @@ public class DailyScheduleActivity extends FragmentActivity {
             mDailyRecyclerView.setVisibility(View.GONE);
             mHintText.setVisibility(View.VISIBLE);
             mDoneButton.setVisibility(View.GONE);
+            mSaveButton.setVisibility(View.GONE);
         } else {
             mDailyRecyclerView.setVisibility(View.VISIBLE);
             mHintText.setVisibility(View.GONE);
             mDoneButton.setVisibility(View.VISIBLE);
+            mSaveButton.setVisibility(View.VISIBLE);
         }
 
     }
@@ -173,6 +188,7 @@ public class DailyScheduleActivity extends FragmentActivity {
                 mDailyRecyclerView.setVisibility(View.VISIBLE);
                 mHintText.setVisibility(View.GONE);
                 mDoneButton.setVisibility(View.VISIBLE);
+                mSaveButton.setVisibility(View.VISIBLE);
 
                 Bundle bundle = data.getExtras(); // Get intent from SetsAndRepsActivity
 
@@ -249,6 +265,7 @@ public class DailyScheduleActivity extends FragmentActivity {
     }
 
     public void setRecommendedRecipe(int pos, String title){
+
         String[] programTitleList = getResources().getStringArray(R.array.predefine_menu_titles);
         String[] recipeList1 = getResources().getStringArray(R.array.chest_recipe_titles);
         String[] recipeList2 = getResources().getStringArray(R.array.back_recipe_titles);
@@ -291,12 +308,106 @@ public class DailyScheduleActivity extends FragmentActivity {
             mDailyData.add(new ScheduleListItem(recipeList6[3], ITS(8), "KG", ITS(4), ITS(20), "90 s"));
             mDailyData.add(new ScheduleListItem(recipeList6[4], ITS(5), "KG", ITS(4), ITS(20), "90 s"));
             mDailyData.add(new ScheduleListItem(recipeList6[5], "", "", ITS(4), ITS(10), "90 s"));
+        } else {
+            // Re-Load the saved recipes.
+            int index = pos - 6;
+            int num = mPreferences.getInt("Customized_Key_" + index + "_Size", 0);
+            for (int n = 0; n < num; n++) {
+                String action = mPreferences.getString("Customized_Key_" + index + "_" + n + "_Action", null);
+                String weights = mPreferences.getString("Customized_Key_" + index + "_" + n + "_Weights", null);
+                String unit = mPreferences.getString("Customized_Key_" + index + "_" + n + "_Unit", null);
+                String sets = mPreferences.getString("Customized_Key_" + index + "_" + n + "_Sets", null);
+                String reps = mPreferences.getString("Customized_Key_" + index + "_" + n + "_Reps", null);
+                String time = mPreferences.getString("Customized_Key_" + index + "_" + n + "_Time", null);
+                mDailyData.add(new ScheduleListItem(action, weights, unit, sets, reps, time));
+            }
         }
 
     }
 
     public String ITS(int n) {
         return Integer.toString(n);
+    }
+
+    public void workoutSave(View view) {
+
+        final int fullOrNot = mPreferences.getInt("Customized_Key_19", 0);
+
+        if (fullOrNot == 0) {
+            if (mDailyData.size() != 0) {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                LayoutInflater linf = LayoutInflater.from(this);
+                final View inflator = linf.inflate(R.layout.dialog_save, null);
+                final EditText saveEdit = (EditText) inflator.findViewById(R.id.save_edit);
+
+                builder.setTitle("Save these?");
+                builder.setMessage("You can see your customized recipes in recommended page.");
+                builder.setView(inflator);
+                builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        builder.create();
+                    }
+                });
+                builder.setNegativeButton("Save", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // **********
+                        // Save data
+                        // **********
+                        String[] programTitleList = getResources().getStringArray(R.array.predefine_menu_titles);
+
+                        mCustomizedTitle = saveEdit.getText().toString();
+                        if (mCustomizedTitle.isEmpty()) {
+                            // No empty blank.
+                            displayToast("You need to enter title!");
+                        } else if (mCustomizedTitle.equals(programTitleList[0]) ||
+                                mCustomizedTitle.equals(programTitleList[1]) ||
+                                mCustomizedTitle.equals(programTitleList[2]) ||
+                                mCustomizedTitle.equals(programTitleList[3]) ||
+                                mCustomizedTitle.equals(programTitleList[4]) ||
+                                mCustomizedTitle.equals(programTitleList[5])) {
+                            // No repeat name.
+                            displayToast(mCustomizedTitle + " has been used.");
+                        } else {
+                            // Save the customized recipes.
+                            SharedPreferences.Editor preferencesEditor = mPreferences.edit();
+                            int existOrNot = 0;
+
+                            for (int n = 0; n < 20; n++) {
+                                if (mPreferences.getInt("Customized_Key_" + n, 0) == 0) {
+                                    existOrNot = n;
+                                    break;
+                                }
+                            }
+
+                            preferencesEditor.putInt("Customized_Key_" + existOrNot, 1);
+                            preferencesEditor.putString("Customized_Key_" + existOrNot + "_Title", mCustomizedTitle);
+                            preferencesEditor.putInt("Customized_Key_" + existOrNot + "_Size", mDailyData.size());
+
+                            for (int i = 0; i < mDailyData.size(); i++) {
+                                preferencesEditor.putString(
+                                        "Customized_Key_" + existOrNot + "_" + i + "_Action", mDailyData.get(i).getAction());
+                                preferencesEditor.putString(
+                                        "Customized_Key_" + existOrNot + "_" + i + "_Weights", mDailyData.get(i).getWeights());
+                                preferencesEditor.putString(
+                                        "Customized_Key_" + existOrNot + "_" + i + "_Unit", mDailyData.get(i).getUnit());
+                                preferencesEditor.putString(
+                                        "Customized_Key_" + existOrNot + "_" + i + "_Sets", mDailyData.get(i).getSets());
+                                preferencesEditor.putString(
+                                        "Customized_Key_" + existOrNot + "_" + i + "_Reps", mDailyData.get(i).getReps());
+                                preferencesEditor.putString(
+                                        "Customized_Key_" + existOrNot + "_" + i + "_Time", mDailyData.get(i).getTime());
+                            }
+
+                            preferencesEditor.apply();
+                            DailyScheduleActivity.super.onBackPressed();
+                        }
+                    }
+                });
+                builder.show();
+            }
+        } else {
+            displayToast("You can only save 20 customized recipes!");
+        }
     }
 }
 
