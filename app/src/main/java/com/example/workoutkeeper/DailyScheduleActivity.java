@@ -81,10 +81,12 @@ public class DailyScheduleActivity extends FragmentActivity {
         // If we need to set recommended recipe...
         if (mFromRecommended.equals("yes")) {
             mDailyData.clear();
+            /*
             mDailyRecyclerView.setVisibility(View.VISIBLE);
             mHintText.setVisibility(View.GONE);
             mDoneButton.setVisibility(View.VISIBLE);
-            mSaveButton.setVisibility(View.VISIBLE);
+            mSaveButton.setVisibility(View.GONE);
+            */
             setRecommendedRecipe(mPreDefinePos, mPreDefine);
         }
 
@@ -155,6 +157,11 @@ public class DailyScheduleActivity extends FragmentActivity {
             mDailyRecyclerView.setVisibility(View.GONE);
             mHintText.setVisibility(View.VISIBLE);
             mDoneButton.setVisibility(View.GONE);
+            mSaveButton.setVisibility(View.GONE);
+        } else if (mFromRecommended.equals("yes")) {
+            mDailyRecyclerView.setVisibility(View.VISIBLE);
+            mHintText.setVisibility(View.GONE);
+            mDoneButton.setVisibility(View.VISIBLE);
             mSaveButton.setVisibility(View.GONE);
         } else {
             mDailyRecyclerView.setVisibility(View.VISIBLE);
@@ -274,51 +281,51 @@ public class DailyScheduleActivity extends FragmentActivity {
         String[] recipeList5 = getResources().getStringArray(R.array.arm_recipe_titles);
         String[] recipeList6 = getResources().getStringArray(R.array.abs_recipe_titles);
         if (title.equals(programTitleList[0])) {
-            mDailyData.add(new ScheduleListItem(recipeList1[0], ITS(20), "KG", ITS(6), ITS(8), "60 s"));
-            mDailyData.add(new ScheduleListItem(recipeList1[1], ITS(10), "KG", ITS(4), ITS(8), "90 s"));
-            mDailyData.add(new ScheduleListItem(recipeList1[4], ITS(8), "KG", ITS(4), ITS(8), "60 s"));
-            mDailyData.add(new ScheduleListItem(recipeList1[2], ITS(10), "KG", ITS(4), ITS(8), "60 s"));
-            mDailyData.add(new ScheduleListItem(recipeList5[4], ITS(8), "KG", ITS(6), ITS(10), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList1[0], ITS(20), getString(R.string.KG), ITS(6), ITS(8), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList1[1], ITS(10), getString(R.string.KG), ITS(4), ITS(8), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList1[4], ITS(8), getString(R.string.KG), ITS(4), ITS(8), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList1[2], ITS(10), getString(R.string.KG), ITS(4), ITS(8), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList5[4], ITS(8), getString(R.string.KG), ITS(6), ITS(10), "60 s"));
         } else if (title.equals(programTitleList[1])) {
             mDailyData.add(new ScheduleListItem(recipeList2[0], "", "", ITS(6), ITS(6), "90 s"));
-            mDailyData.add(new ScheduleListItem(recipeList2[2], ITS(20), "KG", ITS(4), ITS(8), "90 s"));
-            mDailyData.add(new ScheduleListItem(recipeList2[3], ITS(20), "KG", ITS(4), ITS(8), "60 s"));
-            mDailyData.add(new ScheduleListItem(recipeList2[7], ITS(20), "KG", ITS(4), ITS(10), "60 s"));
-            mDailyData.add(new ScheduleListItem(recipeList5[0], ITS(4), "KG", ITS(6), ITS(10), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList2[2], ITS(20), getString(R.string.KG), ITS(4), ITS(8), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList2[3], ITS(20), getString(R.string.KG), ITS(4), ITS(8), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList2[7], ITS(20), getString(R.string.KG), ITS(4), ITS(10), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList5[0], ITS(4), getString(R.string.KG), ITS(6), ITS(10), "60 s"));
         } else if (title.equals(programTitleList[2])) {
-            mDailyData.add(new ScheduleListItem(recipeList3[0], ITS(30), "KG", ITS(6), ITS(8), "90 s"));
-            mDailyData.add(new ScheduleListItem(recipeList3[2], ITS(20), "KG", ITS(4), ITS(8), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList3[0], ITS(30), getString(R.string.KG), ITS(6), ITS(8), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList3[2], ITS(20), getString(R.string.KG), ITS(4), ITS(8), "90 s"));
             mDailyData.add(new ScheduleListItem(recipeList3[3], "", "", ITS(4), ITS(8), "90 s"));
-            mDailyData.add(new ScheduleListItem(recipeList3[7], ITS(20), "KG", ITS(4), ITS(10), "90 s"));
-            mDailyData.add(new ScheduleListItem(recipeList3[9], ITS(15), "KG", ITS(4), ITS(8), "90 s"));
-            mDailyData.add(new ScheduleListItem(recipeList3[10], ITS(15), "KG", ITS(6), ITS(10), "40 s"));
-            mDailyData.add(new ScheduleListItem(recipeList3[11], ITS(15), "KG", ITS(6), ITS(10), "40 s"));
+            mDailyData.add(new ScheduleListItem(recipeList3[7], ITS(20), getString(R.string.KG), ITS(4), ITS(10), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList3[9], ITS(15), getString(R.string.KG), ITS(4), ITS(8), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList3[10], ITS(15), getString(R.string.KG), ITS(6), ITS(10), "40 s"));
+            mDailyData.add(new ScheduleListItem(recipeList3[11], ITS(15), getString(R.string.KG), ITS(6), ITS(10), "40 s"));
         } else if (title.equals(programTitleList[3])) {
-            mDailyData.add(new ScheduleListItem(recipeList4[0], ITS(8), "KG", ITS(6), ITS(6), "60 s"));
-            mDailyData.add(new ScheduleListItem(recipeList4[2], ITS(4), "KG", ITS(4), ITS(8), "90 s"));
-            mDailyData.add(new ScheduleListItem(recipeList4[3], ITS(5), "KG", ITS(6), ITS(6), "60 s"));
-            mDailyData.add(new ScheduleListItem(recipeList4[5], ITS(10), "KG", ITS(4), ITS(10), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList4[0], ITS(8), getString(R.string.KG), ITS(6), ITS(6), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList4[2], ITS(4), getString(R.string.KG), ITS(4), ITS(8), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList4[3], ITS(5), getString(R.string.KG), ITS(6), ITS(6), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList4[5], ITS(10), getString(R.string.KG), ITS(4), ITS(10), "60 s"));
         } else if (title.equals(programTitleList[4])) {
-            mDailyData.add(new ScheduleListItem(recipeList5[0], ITS(6), "KG", ITS(6), ITS(10), "60 s"));
-            mDailyData.add(new ScheduleListItem(recipeList5[2], ITS(4), "KG", ITS(4), ITS(6), "90 s"));
-            mDailyData.add(new ScheduleListItem(recipeList5[3], ITS(6), "KG", ITS(6), ITS(6), "90 s"));
-            mDailyData.add(new ScheduleListItem(recipeList5[4], ITS(6), "KG", ITS(4), ITS(10), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList5[0], ITS(6), getString(R.string.KG), ITS(6), ITS(10), "60 s"));
+            mDailyData.add(new ScheduleListItem(recipeList5[2], ITS(4), getString(R.string.KG), ITS(4), ITS(6), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList5[3], ITS(6), getString(R.string.KG), ITS(6), ITS(6), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList5[4], ITS(6), getString(R.string.KG), ITS(4), ITS(10), "60 s"));
         } else if (title.equals(programTitleList[5])) {
             mDailyData.add(new ScheduleListItem(recipeList6[1], "", "", ITS(4), ITS(20), "90 s"));
-            mDailyData.add(new ScheduleListItem(recipeList6[3], ITS(8), "KG", ITS(4), ITS(20), "90 s"));
-            mDailyData.add(new ScheduleListItem(recipeList6[4], ITS(5), "KG", ITS(4), ITS(20), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList6[3], ITS(8), getString(R.string.KG), ITS(4), ITS(20), "90 s"));
+            mDailyData.add(new ScheduleListItem(recipeList6[4], ITS(5), getString(R.string.KG), ITS(4), ITS(20), "90 s"));
             mDailyData.add(new ScheduleListItem(recipeList6[5], "", "", ITS(4), ITS(10), "90 s"));
         } else {
             // Re-Load the saved recipes.
-            int index = pos - 6;
-            int num = mPreferences.getInt("Customized_Key_" + index + "_Size", 0);
+            //int index = pos;
+            int num = mPreferences.getInt("Customized_Key_" + pos + "_Size", 0);
             for (int n = 0; n < num; n++) {
-                String action = mPreferences.getString("Customized_Key_" + index + "_" + n + "_Action", null);
-                String weights = mPreferences.getString("Customized_Key_" + index + "_" + n + "_Weights", null);
-                String unit = mPreferences.getString("Customized_Key_" + index + "_" + n + "_Unit", null);
-                String sets = mPreferences.getString("Customized_Key_" + index + "_" + n + "_Sets", null);
-                String reps = mPreferences.getString("Customized_Key_" + index + "_" + n + "_Reps", null);
-                String time = mPreferences.getString("Customized_Key_" + index + "_" + n + "_Time", null);
+                String action = mPreferences.getString("Customized_Key_" + pos + "_" + n + "_Action", null);
+                String weights = mPreferences.getString("Customized_Key_" + pos + "_" + n + "_Weights", null);
+                String unit = mPreferences.getString("Customized_Key_" + pos + "_" + n + "_Unit", null);
+                String sets = mPreferences.getString("Customized_Key_" + pos + "_" + n + "_Sets", null);
+                String reps = mPreferences.getString("Customized_Key_" + pos + "_" + n + "_Reps", null);
+                String time = mPreferences.getString("Customized_Key_" + pos + "_" + n + "_Time", null);
                 mDailyData.add(new ScheduleListItem(action, weights, unit, sets, reps, time));
             }
         }
@@ -340,15 +347,15 @@ public class DailyScheduleActivity extends FragmentActivity {
                 final View inflator = linf.inflate(R.layout.dialog_save, null);
                 final EditText saveEdit = (EditText) inflator.findViewById(R.id.save_edit);
 
-                builder.setTitle("Save these?");
-                builder.setMessage("You can see your customized recipes in recommended page.");
+                builder.setTitle(R.string.save_these_title);
+                builder.setMessage(R.string.save_these_msg);
                 builder.setView(inflator);
-                builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton(R.string.reset_no, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         builder.create();
                     }
                 });
-                builder.setNegativeButton("Save", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton(R.string.schedule_list_save, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // **********
                         // Save data
@@ -358,7 +365,7 @@ public class DailyScheduleActivity extends FragmentActivity {
                         mCustomizedTitle = saveEdit.getText().toString();
                         if (mCustomizedTitle.isEmpty()) {
                             // No empty blank.
-                            displayToast("You need to enter title!");
+                            displayToast(getString(R.string.you_need_to_enter_title));
                         } else if (mCustomizedTitle.equals(programTitleList[0]) ||
                                 mCustomizedTitle.equals(programTitleList[1]) ||
                                 mCustomizedTitle.equals(programTitleList[2]) ||
@@ -366,7 +373,7 @@ public class DailyScheduleActivity extends FragmentActivity {
                                 mCustomizedTitle.equals(programTitleList[4]) ||
                                 mCustomizedTitle.equals(programTitleList[5])) {
                             // No repeat name.
-                            displayToast(mCustomizedTitle + " has been used.");
+                            displayToast(mCustomizedTitle + getString(R.string.has_been_used));
                         } else {
                             // Save the customized recipes.
                             SharedPreferences.Editor preferencesEditor = mPreferences.edit();
@@ -406,7 +413,7 @@ public class DailyScheduleActivity extends FragmentActivity {
                 builder.show();
             }
         } else {
-            displayToast("You can only save 20 customized recipes!");
+            displayToast(getString(R.string.only_twenty_recipes));
         }
     }
 }

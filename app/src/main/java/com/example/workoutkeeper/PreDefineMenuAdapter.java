@@ -53,7 +53,7 @@ public class PreDefineMenuAdapter extends
             String FROM_RECOMMENDED = "yes";
 
             Bundle bundle = new Bundle();
-            bundle.putString("Pos_Key", Integer.toString(mPosition));
+            bundle.putString("Pos_Key", Integer.toString(mPosition - mIconList.size()));
             bundle.putString("Title_Key", ITEM);
             bundle.putString("From_Key", FROM_RECOMMENDED);
 

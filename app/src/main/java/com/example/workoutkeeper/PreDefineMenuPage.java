@@ -76,9 +76,7 @@ public class PreDefineMenuPage extends Fragment {
         // Helper class for creating swipe to dismiss and drag and drop functionality.
         ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
                 ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT |
-                        ItemTouchHelper.DOWN | ItemTouchHelper.UP,
-                /*ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT*/
-                swipeDirs) {
+                        ItemTouchHelper.DOWN | ItemTouchHelper.UP, swipeDirs) {
             /**
              * Defines the drag and drop functionality.
              *
@@ -118,57 +116,59 @@ public class PreDefineMenuPage extends Fragment {
                 final RecyclerView.ViewHolder holder = viewHolder;
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 
-                builder.setTitle("Delete these?");
-                builder.setMessage("You will lost your customized recipes.");
-                builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        mAdapter.notifyDataSetChanged();
-                        builder.create();
-                    }
-                });
-                builder.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-
-                        if (mProgramTitle.get(holder.getAdapterPosition()).equals(programTitleList[0]) ||
-                                mProgramTitle.get(holder.getAdapterPosition()).equals(programTitleList[1]) ||
-                                mProgramTitle.get(holder.getAdapterPosition()).equals(programTitleList[2]) ||
-                                mProgramTitle.get(holder.getAdapterPosition()).equals(programTitleList[3]) ||
-                                mProgramTitle.get(holder.getAdapterPosition()).equals(programTitleList[4]) ||
-                                mProgramTitle.get(holder.getAdapterPosition()).equals(programTitleList[5])) {
-
-                            // Remove the item from the dataset.
-                            mProgramTitle.remove(holder.getAdapterPosition());
-                            mProgramIcon.remove(holder.getAdapterPosition());
-                            // Show up the hint text when list is empty
-
-                            // Notify the adapter.
-                            mAdapter.notifyItemRemoved(holder.getAdapterPosition());
-                        } else {
-                            // Delete data in SharedPreferences
-                            SharedPreferences.Editor preferencesEditor = mPreferences.edit();
-                            int index = holder.getAdapterPosition() - mProgramIcon.size();
-
-                            preferencesEditor.putInt("Customized_Key_" + index, 0);
-                            preferencesEditor.remove("Customized_Key_" + index + "_Title");
-                            int num = mPreferences.getInt("Customized_Key_" + index + "_Size", 0);
-                            for (int i = 0; i < num; i++) {
-                                preferencesEditor.remove("Customized_Key_" + index + "_" + i + "_Action");
-                                preferencesEditor.remove("Customized_Key_" + index + "_" + i + "_Weights");
-                                preferencesEditor.remove("Customized_Key_" + index + "_" + i + "_Unit");
-                                preferencesEditor.remove("Customized_Key_" + index + "_" + i + "_Sets");
-                                preferencesEditor.remove("Customized_Key_" + index + "_" + i + "_Reps");
-                                preferencesEditor.remove("Customized_Key_" + index + "_" + i + "_Time");
-                            }
-                            preferencesEditor.apply();
-
-                            // Remove the item from the dataset.
-                            mProgramTitle.remove(holder.getAdapterPosition());
-                            // Notify the adapter.
-                            mAdapter.notifyItemRemoved(holder.getAdapterPosition());
+                if (holder.getAdapterPosition() > 5) {
+                    builder.setTitle(R.string.delete_these_title);
+                    builder.setMessage(R.string.delete_these_msg);
+                    builder.setPositiveButton(R.string.reset_no, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            mAdapter.notifyDataSetChanged();
+                            builder.create();
                         }
-                    }
-                });
-                builder.show();
+                    });
+                    builder.setNegativeButton(R.string.delete, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+
+                            if (mProgramTitle.get(holder.getAdapterPosition()).equals(programTitleList[0]) ||
+                                    mProgramTitle.get(holder.getAdapterPosition()).equals(programTitleList[1]) ||
+                                    mProgramTitle.get(holder.getAdapterPosition()).equals(programTitleList[2]) ||
+                                    mProgramTitle.get(holder.getAdapterPosition()).equals(programTitleList[3]) ||
+                                    mProgramTitle.get(holder.getAdapterPosition()).equals(programTitleList[4]) ||
+                                    mProgramTitle.get(holder.getAdapterPosition()).equals(programTitleList[5])) {
+
+                                // Remove the item from the dataset.
+                                mProgramTitle.remove(holder.getAdapterPosition());
+                                mProgramIcon.remove(holder.getAdapterPosition());
+                                // Show up the hint text when list is empty
+
+                                // Notify the adapter.
+                                mAdapter.notifyItemRemoved(holder.getAdapterPosition());
+                            } else {
+                                // Delete data in SharedPreferences
+                                SharedPreferences.Editor preferencesEditor = mPreferences.edit();
+                                int index = holder.getAdapterPosition() - mProgramIcon.size();
+
+                                preferencesEditor.putInt("Customized_Key_" + index, 0);
+                                preferencesEditor.remove("Customized_Key_" + index + "_Title");
+                                int num = mPreferences.getInt("Customized_Key_" + index + "_Size", 0);
+                                for (int i = 0; i < num; i++) {
+                                    preferencesEditor.remove("Customized_Key_" + index + "_" + i + "_Action");
+                                    preferencesEditor.remove("Customized_Key_" + index + "_" + i + "_Weights");
+                                    preferencesEditor.remove("Customized_Key_" + index + "_" + i + "_Unit");
+                                    preferencesEditor.remove("Customized_Key_" + index + "_" + i + "_Sets");
+                                    preferencesEditor.remove("Customized_Key_" + index + "_" + i + "_Reps");
+                                    preferencesEditor.remove("Customized_Key_" + index + "_" + i + "_Time");
+                                }
+                                preferencesEditor.apply();
+
+                                // Remove the item from the dataset.
+                                mProgramTitle.remove(holder.getAdapterPosition());
+                                // Notify the adapter.
+                                mAdapter.notifyItemRemoved(holder.getAdapterPosition());
+                            }
+                        }
+                    });
+                    builder.show();
+                }
             }
         });
 

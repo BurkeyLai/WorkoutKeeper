@@ -371,5 +371,15 @@
     <string name="progress_you_just_finish">You just finished</string>
     <string name="progress_remain_sets">sets......</string>
     <string name="schedule_list_save">Save</string>
+    <string name="KG">KG</string>
+    <string name="save_these_title">Save these?</string>
+    <string name="save_these_msg">You can see your customized recipes in recommended page.</string>
+    <string name="you_need_to_enter_title">You need to enter title!</string>
+    <string name="has_been_used">has been used.</string>
+    <string name="only_twenty_recipes">You can only save 20 customized recipes!</string>
+    <string name="delete_these_title">Delete these?</string>
+    <string name="delete_these_msg">You will lost your customized recipes.</string>
+    <string name="delete">Delete</string>
+    <string name="set_title_name">Set title name:</string>
 
 </resources>

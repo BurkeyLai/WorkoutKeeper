@@ -103,6 +103,7 @@
                     android:background="@drawable/button_background5"
                     android:text="@string/schedule_list_done"
                     android:textColor="#FFFFFF"
+                    android:visibility="gone"
                     android:onClick="workoutDone"/>
                 <Button
                     android:id="@+id/save_button"
@@ -113,6 +114,7 @@
                     android:background="@drawable/button_background5"
                     android:text="@string/schedule_list_save"
                     android:textColor="#FFFFFF"
+                    android:visibility="gone"
                     android:onClick="workoutSave"/>
             </LinearLayout>
         </LinearLayout>

@@ -313,5 +313,15 @@
     <string name="progress_you_just_finish">你才完成</string>
     <string name="progress_remain_sets">組......</string>
     <string name="schedule_list_save">儲存</string>
+    <string name="KG">公斤</string>
+    <string name="save_these_title">儲存?</string>
+    <string name="save_these_msg">可在推薦菜單的頁面看見自訂菜單</string>
+    <string name="you_need_to_enter_title">請輸入標題!</string>
+    <string name="has_been_used">已被使用</string>
+    <string name="only_twenty_recipes">最多只能有20項自訂菜單!</string>
+    <string name="delete_these_title">刪除?</string>
+    <string name="delete_these_msg">自訂菜單將消失</string>
+    <string name="delete">刪除</string>
+    <string name="set_title_name">輸入標題:</string>
 
 </resources>
