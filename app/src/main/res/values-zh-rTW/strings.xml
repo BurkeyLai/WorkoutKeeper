@@ -256,7 +256,7 @@
     <string name="rm_dialog_weight_must_bigger_than_zero">負重必須大於0</string>
     <string name="rm_dialog_rep_times">次數必須介於1到12</string>
     <string name="confirm_show_me">顯示結果</string>
-    <string name="toolbar_fitness">健身</string>
+    <string name="toolbar_fitness">健身管理</string>
     <string name="timer_pause">暫停</string>
     <string name="timer_start">開始</string>
     <string name="timer_please_enter">請至少輸入一欄</string>

@@ -3,16 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.workoutkeeper.MainActivity">
     <item
+        android:id="@+id/Timer_icon"
+        android:icon="@drawable/ic_timer"
+        android:orderInCategory="100"
+        android:title="@string/toolbar_timer"
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/rmCounter_settings"
         android:icon="@drawable/ic_rm"
-        android:orderInCategory="100"
+        android:orderInCategory="80"
         android:title="@string/title_rmCounter"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/anatomical_settings"
         android:icon="@drawable/ic_anatomical"
-        android:orderInCategory="80"
+        android:orderInCategory="60"
         android:title="@string/title_anatomical"
         app:showAsAction="always" />
 </menu>

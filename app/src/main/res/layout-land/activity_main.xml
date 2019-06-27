@@ -4,22 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FitnessActivity">
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
         <android.support.design.widget.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabSelectedTextColor="@color/colorAccent"
             app:tabTextColor="@color/colorTheme">
-
         </android.support.design.widget.TabLayout>
-
         <android.support.v4.view.ViewPager
             android:id="@+id/fitness_pager"
             android:layout_width="match_parent"
@@ -28,5 +25,4 @@
         </android.support.v4.view.ViewPager>
 
     </LinearLayout>
-
 </RelativeLayout>

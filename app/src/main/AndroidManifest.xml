@@ -69,10 +69,10 @@
         <activity
             android:name=".ChooseBodyPartActivity"
             android:label="@string/toolbar_bodypart" />
+
         <activity
-            android:name=".FitnessActivity"
-            android:label="@string/toolbar_fitness" />
-        <activity android:name=".MainActivity">
+            android:name=".MainActivity"
+            android:label="@string/toolbar_fitness">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
