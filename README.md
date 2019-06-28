@@ -50,7 +50,9 @@ The apk file is under /WorkoutKeeper/app/debug/app-debug.apk.
 * Confirm and go to next page for **recording** your program. Whenever you finish a set, click "Take a breathe" for app to **notify** you about the rest time, until you finish all sets. 
 <div align=center><img width="400" height="345" src="https://upload.cc/i1/2019/06/19/4DlcpH.png"/></div>
 
->---
+* If you choose to start with daily schedule, you can define your own programs. Tap the program items can get into progress page. If you want to keep your excellent programs for usage next time, you can save them and the most is 20 customized schedules. You can see your customized schedules in previous page.
+<div align=center><img width="400" height="345" src="https://upload.cc/i1/2019/06/28/5XILiF.png"/></div>
+
 
 ## Authors and Contribution
 
